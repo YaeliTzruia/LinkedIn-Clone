@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Flex, Heading, Image, Input, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Center, Divider, Flex, Heading, Image, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 
@@ -9,7 +9,7 @@ import { colors } from "../../themes/colors";
 import google from "../../assets/google.png"
 
 export default function Welcome() {
-    const [isSmallScreen] = useMediaQuery("(max-width: 900px)");
+
 
     return (
         <Flex>

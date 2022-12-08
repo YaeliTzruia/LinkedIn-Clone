@@ -7,15 +7,20 @@ body {
     contrast(87%);
 }
 .slide {
-  opacity: 0;
+  /* opacity: 0; */
   transition: 4s;
-  left: 0;
+  left: -10%;
 }
 
 .slide-active {
-  opacity: 1;
+  /* opacity: 1; */
   transition-duration: 2s;
 }
 #menu-button-:r3 {
   width: 5.861rem;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
 }

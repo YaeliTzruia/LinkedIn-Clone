@@ -19,8 +19,8 @@ export default function Explore() {
 
 
     return (
-        <Flex paddingBottom={["5rem", "6rem", "0", "0"]} justifyContent="center" alignItems="center" h={["22.75rem", "35rem", "22.75rem", "22.75rem"]} w="100%" backgroundColor={colors.background}>
-            <Flex h={["22.75rem", null, "15.25rem", "15.25rem"]} paddingX={["1rem", "1rem", "0", "0"]} w={["100%", "100%", "70.5rem", "70.5rem"]} >
+        <Flex justifyContent="center" alignItems="center" w="100%" backgroundColor={colors.background}>
+            <Flex paddingY="3rem" paddingX={["1rem", "1rem", "0", "0"]} w={["100%", "100%", "70.5rem", "70.5rem"]} >
                 <Flex flexDir={["column", "column", "row", "row"]} w="100%" justifyContent="space-between">
                     <Flex>
                         <Heading marginBottom={["1rem", "1rem", "0", "0"]} h={["5rem", "5rem", "7.5rem", "7.5rem"]} fontSize={["2rem", "2rem", "3rem", "3rem"]} w={["100%", "100%", "25.5rem", "25.5rem"]} textShadow="1px 0px 0.5px #8f5849" fontWeight={[400, 400, 200, 200]} as="h2">Explore topics you are interested in</Heading>

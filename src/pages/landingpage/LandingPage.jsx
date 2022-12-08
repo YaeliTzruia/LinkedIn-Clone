@@ -1,4 +1,4 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import { sliderData } from "../../Json-data/landingpage/slideData";
 import CopyRight from "../../misc/footer/CopyRight";
 import FooterLanding from "../../misc/footer/FooterLanding";
@@ -8,22 +8,26 @@ import Find from "./Find";
 import Join from "./Join";
 import Post from "./Post";
 import Slide from "./Slide";
+import Swipe from "./swiper";
 import Welcome from "./Welcome";
 
 
 export default function LandingPage() {
+    const [isSmallScreen] = useMediaQuery("(max-width: 900px)");
 
     return (
         <Flex flexDir="column">
             <Welcome />
             <Explore />
-            {/* <Find /> */}
-            {/* <Post />
+            <Find />
+            <Post />
+
+            {/* <Swipe slide={sliderData} /> */}
             <Slide slide={sliderData} />
             <ConectLearn />
             <Join />
             <FooterLanding />
-            <CopyRight /> */}
+            <CopyRight />
         </Flex>
     )
 }
