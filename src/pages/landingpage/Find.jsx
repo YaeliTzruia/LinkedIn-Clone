@@ -55,7 +55,7 @@ export default function Find() {
                         <Flex gap="0.75rem" w={["20.5rem", "20.5rem", "40.5rem", "40.5rem"]} flexDir="column">
                             <Text marginBottom={["1.25rem", "0.5rem", "1.25rem", "1.25rem"]} color={colors.linkText} fontWeight={600} fontSize="1rem">SUGGESTED SEARCHES
                             </Text>
-                            <Flex w={["23.875rem", "23.875rem", "40.5rem", "40.5rem"]} flexWrap="wrap" padding="0" gridGap="0.375rem" >
+                            <Flex w={["20.5rem", "23.875rem", "40.5rem", "40.5rem"]} flexWrap="wrap" padding="0" gridGap="0.375rem" >
                                 {showAll ? find1.map((data, index) =>
 
                                     <Flex key={index} gap="0.375rem">

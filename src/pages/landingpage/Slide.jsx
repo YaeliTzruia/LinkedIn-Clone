@@ -30,14 +30,14 @@ export default function Slide({ slides }) {
 
 
     return (
-        <Flex w="100%" backgroundColor="#f4f3f1" h={["min-content", "43rem", "52.5rem", "52.5rem"]}>
-            <Flex marginTop={["0.25rem", "0.25rem", "0", "0"]} justifyContent={["flex-start", "flex-start", "center", "center"]} w={["25.875rem", "25.875rem", "100%", "100%"]} alignItems="center" flexDir="column" >
+        <Flex w="100%" backgroundColor="#f4f3f1" h={["44rem", "43rem", "52.5rem", "52.5rem"]}>
+            <Flex marginTop={["0.25rem", "0.25rem", "0", "0"]} justifyContent={["flex-start", "flex-start", "center", "center"]} w={["20.5rem", "25.875rem", "100%", "100%"]} alignItems="center" flexDir="column" >
 
-                <Flex flexDir="column" w={["25.875rem", "25.875rem", "70.5rem", "70.5rem"]} alignItems="center" h="31.688rem">
-                    <Flex justifyContent="flex-end" w={["21.875rem", "21.875rem", "65rem", "65rem"]}>
-                        <Flex align="center" justifyContent="flex-end" w={["21.875rem", "21.875rem", "20rem", "20rem"]}  >
+                <Flex flexDir="column" w={["20.5remrem", "25.875rem", "70.5rem", "70.5rem"]} alignItems="center" h="31.688rem">
+                    <Flex justifyContent="flex-end" w={["20rem", "21.875rem", "65rem", "65rem"]}>
+                        <Flex align="center" justifyContent="flex-end" w={["7rem", "21.875rem", "20rem", "20rem"]}  >
 
-                            <Flex w={["21.875rem", "7.269rem", "20rem", "20rem"]}
+                            <Flex w={["20.5rem", "7.269rem", "20rem", "20rem"]}
                             // {/* //  w="7.269rem" */}
                             >
                                 <AppButton fontSize="0.875rem" onClick={prevSlide} backgroundColor="transparent" paddingX="0.438rem" paddingY="1rem" h="2.5rem" w={["8.269rem", "8.269rem", "7.269rem", "7.269rem"]} icons={true} left={true} icon={<MdOutlineArrowBackIos />} id="swiper-back" text="Previous" />
@@ -53,7 +53,7 @@ export default function Slide({ slides }) {
                         {sliderData.map((card, index) => {
                             return (
 
-                                <Flex marginTop={["0", "0", "0.5rem", "0.5rem"]} paddingLeft={["1rem", "1rem", "0", "0"]} w={["25.875rem", "25.875rem", "70rem", "70rem"]} key={index + card.src} className={index === current ? "slide-active" : "slide"}>
+                                <Flex marginTop={["0", "0", "0.5rem", "0.5rem"]} paddingLeft={["1rem", "1rem", "0", "0"]} w={["20.5rem", "25.875rem", "70rem", "70rem"]} key={index + card.src} className={index === current ? "slide-active" : "slide"}>
                                     {index === current && (
                                         <AppSwipeCard src={card.src} text={card.text} title={card.title} />
                                     )}

@@ -21,8 +21,6 @@ export default function LandingPage() {
             <Explore />
             <Find />
             <Post />
-
-            {/* <Swipe slide={sliderData} /> */}
             <Slide slide={sliderData} />
             <ConectLearn />
             <Join />

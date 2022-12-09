@@ -38,17 +38,17 @@ export default function Navbar() {
                                 )}
                             </Flex>
 
-                            <Center color={colors.linkText} border="0.063rem" height='2.313rem'>
+                            <Center marginTop="0.4rem" marginRight="0.5rem" color={colors.linkText} border="0.063rem" height='2.313rem'>
                                 <Divider orientation='vertical' />
                             </Center>
                         </Flex>
                     }
-                    <Flex gap="0.5rem" align={[null, null, "center", "center"]}>
-                        <AppButton _hover={{ backgroundColor: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.9)" }} h="3rem" w="7.2rem" fontWeight={700} color={colors.buttonLabelBlack} backgroundColor="transparent" fontSize="1rem" text="Join now" />
+                    <Flex gap="0.7rem" align={[null, null, "center", "center"]}>
+                        <AppButton _hover={{ backgroundColor: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.9)" }} h="3rem" w="6.5rem" fontWeight={700} color={colors.buttonLabelBlack} backgroundColor="transparent" fontSize="1rem" text="Join now" />
                         <AppButton h="3.1rem" w="6.3rem" fontWeight={700} backgroundColor="transparent" color={colors.buttonSecondary} border={`1px solid ${colors.buttonSecondary}`} _hover={{ backgroundColor: "rgba(112,181,249,0.15)" }} fontSize="1rem" text="Sign in" />
                     </Flex>
                 </Flex>
             </Flex>
-        </Flex>
+        </Flex >
     )
 }

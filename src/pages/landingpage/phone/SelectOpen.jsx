@@ -10,7 +10,7 @@ export default function SelectOpen({ isOpen, onOpen, onClose }) {
     return (
 
         <Drawer
-            size="lg"
+            // size={["sm", "lg", "lg", "lg"]}
             isFullHeight={true}
             returnFocusOnClose={true}
             placement="top"
@@ -19,10 +19,10 @@ export default function SelectOpen({ isOpen, onOpen, onClose }) {
         >
             <DrawerOverlay />
             <DrawerContent >
-                <DrawerHeader padding="0">
+                <DrawerHeader w="100%" padding="0">
 
                     <Flex marginBottom="0.7rem" display="block" justifyContent="center" align="center" paddingTop="0.75rem" paddingBottom="1rem" paddingX="1.5rem" >
-                        <Flex marginLeft="20.625rem" justifyContent="center" align="center" h="2.5rem" w="2.5rem">
+                        <Flex marginLeft={["17.25rem", "20.625rem", "20.625rem", "20.625rem"]} justifyContent="center" align="center" h="2.5rem" w="2.5rem">
                             <Image w="1.5rem" h="1.5rem" opacity={1}
                                 onClick={onClose}
                                 alt="lines menu"
@@ -37,7 +37,7 @@ export default function SelectOpen({ isOpen, onOpen, onClose }) {
                         <Flex
                             // zIndex={3}
                             position="relative"
-                            marginLeft="1rem "
+                            paddingX="1rem"
                             flexDir="column"
                             h={["540px", "795px", null, null]}
                             w="100%"

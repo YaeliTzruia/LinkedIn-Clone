@@ -29,7 +29,7 @@ export default function CopyRight() {
 
                     <Flex gridTemplateColumns="1fr 1fr" display={["grid", "grid", "flex", "flex"]}>
                         {nav.map((data, index) =>
-                            <Text w={["11.938rem", "11.938rem", "fit-content", "fit-content"]} _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} cursor="pointer" padding="0.5rem" fontSize="0.75rem" fontWeight={600} key={index + 2}>
+                            <Text w={["10.25rem", "11.938rem", "fit-content", "fit-content"]} _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} cursor="pointer" padding="0.5rem" fontSize="0.75rem" fontWeight={600} key={index + 2}>
                                 {data.text}
                             </Text>
                         )}
