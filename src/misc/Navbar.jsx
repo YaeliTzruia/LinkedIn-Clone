@@ -9,10 +9,12 @@ import discover from "../assets/svg/discover.svg"
 import AppButton from "../components/AppButton";
 import { colors } from "../themes/colors";
 import AppIconLink from "../components/AppIconLink";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
 
     const [isSmallScreen] = useMediaQuery("(max-width: 900px)");
+    const navigate = useNavigate()
 
     const navbarLinks = [
         { icon: discover, text: "Discover", h: "1.25rem", w: "1.25rem" },
@@ -31,9 +33,9 @@ export default function Navbar() {
                     {!isSmallScreen &&
                         <Flex>
                             <Flex>
-                                {navbarLinks.map((data, index) =>
-                                    <Flex w="4rem" h="3.25rem" align="center" justifyContent="center" marginX="0.5rem" color={colors.linkText}>
-                                        <AppIconLink classname="navbar-images" iconH={data.h} iconW={data.w} key={index} text={data.text} icon={data.icon} />
+                                {navbarLinks.map((data) =>
+                                    <Flex key={data.text} w="4rem" h="3.25rem" align="center" justifyContent="center" marginX="0.5rem" color={colors.linkText}>
+                                        <AppIconLink className="navbar-images" iconH={data.h} iconW={data.w} text={data.text} icon={data.icon} />
                                     </Flex>
                                 )}
                             </Flex>
@@ -44,7 +46,9 @@ export default function Navbar() {
                         </Flex>
                     }
                     <Flex gap="0.7rem" align={[null, null, "center", "center"]}>
-                        <AppButton _hover={{ backgroundColor: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.9)" }} h="3rem" w="6.5rem" fontWeight={700} color={colors.buttonLabelBlack} backgroundColor="transparent" fontSize="1rem" text="Join now" />
+                        <AppButton onClick={() => {
+                            navigate("/signup")
+                        }} _hover={{ backgroundColor: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.9)" }} h="3rem" w="6.5rem" fontWeight={700} color={colors.buttonLabelBlack} backgroundColor="transparent" fontSize="1rem" text="Join now" />
                         <AppButton h="3.1rem" w="6.3rem" fontWeight={700} backgroundColor="transparent" color={colors.buttonSecondary} border={`1px solid ${colors.buttonSecondary}`} _hover={{ backgroundColor: "rgba(112,181,249,0.15)" }} fontSize="1rem" text="Sign in" />
                     </Flex>
                 </Flex>

@@ -45,11 +45,11 @@ export default function SelectOpen({ isOpen, onOpen, onClose }) {
                         // backgroundColor="#F0F4FF"
                         >
 
-                            {topicOptions.map((data, index) =>
+                            {topicOptions.map((data) =>
                                 <Flex flexDir="column"
                                     paddingBottom="1rem"
                                     // marginTop="1rem"
-                                    key={index}
+                                    key={data.title}
 
                                     fontSize="25px"
                                     _active={{ textDecoration: "underline" }}

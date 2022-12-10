@@ -14,26 +14,26 @@ export default function FooterLanding() {
                 <Flex flexDir={["column", "column", "row", "row"]}  >
                     <Flex marginRight="1.5rem" w="12rem" flexDir="column">
                         <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} color="#000000E6" fontWeight={600} fontSize="1rem">General</Text>
-                        {general.map((data, index) =>
-                            <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
+                        {general.map((data) =>
+                            <Text key={data.text} marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
                         )}
                     </Flex>
                     <Flex marginRight="1.5rem" w="12rem" flexDir="column">
                         <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} color="#000000E6" fontWeight={600} fontSize="1rem">Bowse LinkedIn</Text>
-                        {browse.map((data, index) =>
-                            <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
+                        {browse.map((data) =>
+                            <Text key={data.text} marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
                         )}
                     </Flex>
                     <Flex marginRight="1.5rem" w="12rem" flexDir="column">
                         <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} color="#000000E6" fontWeight={600} fontSize="1rem">Business Solutions</Text>
-                        {solutions.map((data, index) =>
-                            <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
+                        {solutions.map((data) =>
+                            <Text key={data.text} marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
                         )}
                     </Flex>
                     <Flex marginRight="1.5rem" w="12rem" flexDir="column">
                         <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} color="#000000E6" fontWeight={600} fontSize="1rem">Directories</Text>
-                        {directories.map((data, index) =>
-                            <Text marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
+                        {directories.map((data) =>
+                            <Text key={data.text} marginBottom={["0.625rem", "0.625rem", "0.5rem", "0.5rem"]} cursor="pointer" _hover={{ backgroundColor: "transparent", color: "#1d5d9f", textDecor: "underline" }} color="#00000099" fontWeight={600} fontSize="0.875rem">{data.text}</Text>
                         )}
                     </Flex>
                 </Flex>

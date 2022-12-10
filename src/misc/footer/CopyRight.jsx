@@ -19,9 +19,9 @@ export default function CopyRight() {
     ]
 
     return (
-        <Flex color="#00000099" w="100%" >
+        <Flex backgroundColor="white" color="#00000099" w="100%" >
             <Flex flexDir={["column", "column", "row", "row"]} marginX={["0", "0", "24.75rem", "24.75rem"]} align="center" w={["100%", "100%", "70.5rem", "70.5rem"]}>
-                <Flex flexDir={["column", "column", "row", "row"]} >
+                <Flex align="center" flexDir={["column", "column", "row", "row"]} >
                     <Flex align="center" padding="0.5rem">
                         <Image marginRight="0.5rem" w="3.5rem" h="0.875rem" alt="LinkedIn logo" src={blackLogo} />
                         <Flex fontSize="0.75rem">© 2022</Flex>

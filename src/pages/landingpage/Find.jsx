@@ -56,14 +56,14 @@ export default function Find() {
                             <Text marginBottom={["1.25rem", "0.5rem", "1.25rem", "1.25rem"]} color={colors.linkText} fontWeight={600} fontSize="1rem">SUGGESTED SEARCHES
                             </Text>
                             <Flex w={["20.5rem", "23.875rem", "40.5rem", "40.5rem"]} flexWrap="wrap" padding="0" gridGap="0.375rem" >
-                                {showAll ? find1.map((data, index) =>
+                                {showAll ? find1.map((data) =>
 
-                                    <Flex key={index} gap="0.375rem">
+                                    <Flex key={data.text} gap="0.375rem">
                                         <AppButton _active={{ backgroundColor: "transparent", color: colors.buttonSecondary, border: `1px solid ${colors.buttonSecondary}` }} _hover={{ backgroundColor: "#e4e3de", color: colors.primaryText }} border={`1px solid ${colors.linkText}`} backgroundColor="transparent" fontSize="1.25rem" paddingX="1.5rem" paddingY="1rem" color="#000000BF" text={data.text} />
                                     </Flex>
-                                ) : find1.slice(0, 10).map((data, index) =>
+                                ) : find1.slice(0, 10).map((data) =>
 
-                                    <Flex key={index} gap="0.375rem">
+                                    <Flex key={data.text} gap="0.375rem">
                                         <AppButton _active={{ backgroundColor: "transparent", color: colors.buttonSecondary, border: `1px solid ${colors.buttonSecondary}` }} _hover={{ backgroundColor: "#e4e3de", color: colors.primaryText }} border={`1px solid ${colors.linkText}`} backgroundColor="transparent" fontSize="1.25rem" paddingX="1.5rem" paddingY="1rem" color="#000000BF" text={data.text} />
                                     </Flex>
                                 )}

@@ -76,8 +76,9 @@ export default function ConectLearn() {
                         </MenuButton>
                         {!isSmallScreen &&
                             <MenuList w="5.861rem" zIndex={2}>
-                                {topicOptions.map((data, index) => {
+                                {topicOptions.map((data) => {
                                     <MenuItem
+                                        key={data.title}
                                         fontWeight={400} whiteSpace="normal" wordBreak="break-word" h="3.688rem" w="22.5rem">{`${data.title} \n ${data.desc}`}
                                     </MenuItem>
                                 }

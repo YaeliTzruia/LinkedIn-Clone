@@ -2,6 +2,7 @@ import { Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import { sliderData } from "../../Json-data/landingpage/slideData";
 import CopyRight from "../../misc/footer/CopyRight";
 import FooterLanding from "../../misc/footer/FooterLanding";
+import Navbar from "../../misc/Navbar";
 import ConectLearn from "./Conect&Learn";
 import Explore from "./Explore";
 import Find from "./Find";
@@ -17,6 +18,7 @@ export default function LandingPage() {
 
     return (
         <Flex flexDir="column">
+            <Navbar />
             <Welcome />
             <Explore />
             <Find />

@@ -16,46 +16,38 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">
-        <Router>
-          <Navbar />
-
-          <Routes>
-            {/* <Router> */}
-            <Navbar />
-            <>
-              {!loading && loggedIn ? (
-                <>
-                  {routes
-                    .filter((r) => r.protected)
-                    .map((route) => (
-                      <Route
-                        path={route.path}
-                        key={route.path}
-                        element={route.component}
-                      />
-                    ))}
-                  <Route path="*" element={<Navigate to="/" />} />
-                </>
-              ) : (
-                <>
-                  {routes
-                    .filter((r) => !r.protected)
-                    .map((route) => (
-                      <Route
-                        path={route.path}
-                        key={route.path}
-                        element={route.component}
-                      />
-                    ))}
-                  <Route path="*" element={<Navigate to="/" />} />
-                </>
-              )}
-            </>
-            ){/* </Router> */}
-          </Routes>
-        </Router>
-        {/* <Navbar />
-        <LandingPage /> */}
+        <Routes>
+          <>
+            {!loading && loggedIn ? (
+              <>
+                {routes
+                  .filter((r) => r.protected)
+                  .map((route) => (
+                    <Route
+                      path={route.path}
+                      key={route.path}
+                      element={route.component}
+                    />
+                  ))}
+                <Route path="*" element={<Navigate to="/" />} />
+              </>
+            ) : (
+              <>
+                {routes
+                  .filter((r) => !r.protected)
+                  .map((route) => (
+                    <Route
+                      path={route.path}
+                      key={route.path}
+                      element={route.component}
+                    />
+                  ))}
+                <Route path="*" element={<Navigate to="/" />} />
+              </>
+            )}
+          </>
+          )
+        </Routes>
       </Flex>
     </ChakraProvider>
   );
