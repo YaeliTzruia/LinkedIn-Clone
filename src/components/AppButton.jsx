@@ -1,13 +1,13 @@
 import { Button, Flex, IconButton, Image } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function AppButton({ icons = false, image = false, right = false, left = false, paddingY = "0.78rem", paddingX = "1.5rem", borderRadius = "28px", src, icon, text, ...oterProps }) {
+export default function AppButton({ icons = false, image = false, right = false, left = false, paddingY = "0.78rem", paddingX = "1.5rem", borderRadius = "28px", src, icon, text, imgLeftMarginRight = "1rem", ...oterProps }) {
     // const [selected, setSelected] = useState(false)
 
     if (image && left) {
         return (
             <Flex w="100%" justifyContent="space-between" >
-                <Button borderRadius={borderRadius} paddingY="0.78rem" paddingX="1.5rem" w="100%" {...oterProps} leftIcon={<Image marginRight="1rem" position="relative" w="1.5rem" h="1.5rem" src={src} />}>{text}</Button>
+                <Button borderRadius={borderRadius} paddingY="0.78rem" paddingX="1.5rem" w="100%" {...oterProps} leftIcon={<Image backgroundColor="transparent" marginRight={imgLeftMarginRight} position="relative" h="1.5rem" src={src} />}>{text}</Button>
             </Flex>
         )
     }

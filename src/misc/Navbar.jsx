@@ -49,7 +49,9 @@ export default function Navbar() {
                         <AppButton onClick={() => {
                             navigate("/signup")
                         }} _hover={{ backgroundColor: "rgba(0,0,0,0.08)", color: "rgba(0,0,0,0.9)" }} h="3rem" w="6.5rem" fontWeight={700} color={colors.buttonLabelBlack} backgroundColor="transparent" fontSize="1rem" text="Join now" />
-                        <AppButton h="3.1rem" w="6.3rem" fontWeight={700} backgroundColor="transparent" color={colors.buttonSecondary} border={`1px solid ${colors.buttonSecondary}`} _hover={{ backgroundColor: "rgba(112,181,249,0.15)" }} fontSize="1rem" text="Sign in" />
+                        <AppButton onClick={() => {
+                            navigate("/signin")
+                        }} h="3.1rem" w="6.3rem" fontWeight={700} backgroundColor="transparent" color={colors.buttonSecondary} border={`1px solid ${colors.buttonSecondary}`} _hover={{ backgroundColor: "rgba(112,181,249,0.15)" }} fontSize="1rem" text="Sign in" />
                     </Flex>
                 </Flex>
             </Flex>
