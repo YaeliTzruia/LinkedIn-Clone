@@ -1,5 +1,5 @@
-import { Box, Center, Divider, Flex, Heading, Image, Input, Link, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Center, Divider, Flex, Heading, Image, Input, Link, Text } from "@chakra-ui/react";
+
 
 
 import welcome from "../../assets/welcome.svg"
@@ -7,9 +7,11 @@ import AppButton from "../../components/AppButton";
 import AppInputField from "../../components/AppInputFile";
 import { colors } from "../../themes/colors";
 import google from "../../assets/google.png"
+import { useNavigate } from "react-router-dom";
 
 export default function Welcome() {
 
+    const navigate = useNavigate()
 
     return (
         <Flex>
@@ -26,9 +28,12 @@ export default function Welcome() {
                                     <AppInputField text="Email or phone number" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" w={["20.5rem", "24rem", "100%", "100%"]} h={["3rem", "3rem", "3rem", "3rem"]} />
                                     <AppInputField w={["20.5rem", "24rem", "100%", "100%"]} isPassword={true} text="Password" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" h="3rem" />
                                 </Flex>
-                                <Link marginBottom="1.5rem" marginTop="1rem" fontWeight={500} color={colors.primaryText}>Forgot password?</Link>
+                                <Link activeClass="active"
+                                    marginBottom="1.5rem" marginTop="1rem" fontWeight={500} color={colors.primaryText}>Forgot password?</Link>
 
-                                <AppButton backgroundColor="#2977c9" _hover={{ backgroundColor: "#1d5d9f" }} h="3.5rem" color="#fff" w="100%" fontSize="1.3rem" text="Sign in" />
+                                <AppButton onClick={() => {
+                                    navigate("./signin")
+                                }} backgroundColor="#2977c9" _hover={{ backgroundColor: "#1d5d9f" }} h="3.5rem" color="#fff" w="100%" fontSize="1.3rem" text="Sign in" />
                             </Flex>
                             <Flex marginY="1rem" paddingX="0.75rem" justifyContent="center" align="center">
                                 <Center border="0.063rem" color="#000000E6" orientation='horizontal' w="10.584rem" > <Divider />
@@ -40,7 +45,10 @@ export default function Welcome() {
                             </Flex>
                             <Flex justifyContent="space-between" h="8rem" flexDir="column">
                                 <AppButton left _hover={{ backgroundColor: colors.background, color: colors.primaryText }} paddingX="2rem" color={colors.linkText} border={`1px solid rgba(0,0,0,0.6)`} backgroundColor="white" image={true} src={google} fontWeight={400} h="3.5rem" w="100%" fontSize="1.3rem" text="Sign in with Google" />
-                                <AppButton color={colors.buttonLabelBlack} border={`1px solid rgba(0,0,0,0.6)`} backgroundColor="white" _hover={{ backgroundColor: colors.background, color: colors.primaryText }} h="3.5rem" w="100%" fontSize="1.3rem" text="New to inkedIn? Join now" />
+
+                                <AppButton onClick={() => {
+                                    navigate("./signup")
+                                }} color={colors.buttonLabelBlack} border={`1px solid rgba(0,0,0,0.6)`} backgroundColor="white" _hover={{ backgroundColor: colors.background, color: colors.primaryText }} h="3.5rem" w="100%" fontSize="1.3rem" text="New to inkedIn? Join now" />
                             </Flex>
                         </Flex>
                     </Flex>
@@ -57,18 +65,3 @@ export default function Welcome() {
         </Flex>
     )
 }
-
-
-
-
-//                         </Flex>
-//                     </Flex>
-//                 </Flex>
-//                 {/* <Flex > */}
-//                 <Image flexShrink={1} marginTop="1.563rem" zIndex={-1} position="absolute" src={welcome} h={["13.375rem", "13.375rem", "35rem", "35rem"]} w={["23.375rem", "23.375rem", "43.7rem", "43.7rem"]} />
-//                 {/* </Flex> */}
-//             </Flex>
-
-//         </Flex>
-//     </Flex>
-// )

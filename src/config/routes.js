@@ -1,6 +1,8 @@
+import SignIn from "../pages/AccessAccount/SignIn";
+import Signup from "../pages/AccessAccount/signup/Signup";
+
 import LandingPage from "../pages/landingpage/LandingPage";
-import SignIn from "../pages/SignIn";
-import Signup from "../pages/Signup";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes = [
   {
@@ -19,6 +21,12 @@ const routes = [
     path: "/signin",
     component: <SignIn />,
     lable: "SignIn",
+    protected: false,
+  },
+  {
+    path: "/notfound",
+    component: <PageNotFound />,
+    lable: "Not-Found",
     protected: false,
   },
 ];

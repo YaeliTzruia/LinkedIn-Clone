@@ -36,8 +36,8 @@ export default function AppButton({ icons = false, image = false, right = false,
 
 
 
-        <Button minH="3rem" h="min-content" {...oterProps} borderRadius="28px" paddingY={paddingY} paddingX={paddingX}>
+        <Button h="min-content" {...oterProps} borderRadius="28px" paddingY={paddingY} paddingX={paddingX}>
             {text}
-        </Button>
+        </Button >
     )
 }
