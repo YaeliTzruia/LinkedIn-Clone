@@ -29,7 +29,7 @@ export default function SignIn() {
             < Flex paddingTop={["2rem", "2rem", "2rem", "2rem"]} paddingLeft={["2rem", "2rem", "3.5rem", "3.5rem"]} w={["100%", "100%", "70.5rem", "70.5rem"]} >
                 <Image w="6.8rem" h="1.75rem" src={logo} alt="LinkedIn logo name" />
             </Flex >
-            <Flex justifyContent="center" flexDir=" column" alignItems="center" w="100%" h={[null, null, "42rem", "60.5rem"]}>
+            <Flex justifyContent="center" flexDir=" column" alignItems="center" w="100%" h={[null, null, "37.5rem", "60.5rem"]}>
                 <Flex boxShadow={[null, null, shadow, shadow]} flexDir="column" borderRadius="0.5rem" padding="1.5rem" w={["100%", "100%", "22rem", "22rem"]} h={["30.5rem", "31.7rem", "31.999rem", "31.999rem"]} backgroundColor="white">
                     <Flex paddingLeft={["0.55rem", "0.55rem", "0", "0"]} marginBottom="1rem" flexDir="column">
                         <Heading fontWeight={700} fontSize="2rem">Sign in</Heading>

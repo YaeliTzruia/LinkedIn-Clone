@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, InputLeftElement, textDecoration, Flex } from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, InputLeftElement, textDecoration, Flex, Image } from "@chakra-ui/react";
 import { useReducer } from "react";
 import { colors } from "../themes/colors";
 
@@ -25,7 +25,9 @@ export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6
                                     <Button fontWeight={400} h={btnHight} _active={{ backgroundColor: "transparent" }} _hover={{ backgroundColor: "transparent", textDecoration: "underline" }} backgroundColor="transparent" color={colors.linkText} size='sm' marginBottom="0.5rem" onClick={setShow}>
                                         {show ? 'Hide' : 'Show'}
                                         {/* paddingLeft="0.625rem" */}
-                                    </Button>}
+                                    </Button>
+                                }
+
 
                             </InputLeftElement>
                         </Flex >
@@ -34,6 +36,7 @@ export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6
                             <Input borderColor={border} _hover={{ borderColor: { border } }} autoComplete="off" placeholder=" " {...props} type={type} />
                         </Flex>
                 }
+
             </InputGroup >
         </FormControl >
     )

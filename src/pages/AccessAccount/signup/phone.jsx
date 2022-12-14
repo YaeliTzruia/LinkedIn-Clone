@@ -26,7 +26,7 @@ export default function Phone() {
                     <Image w="5.3rem" h="1.35rem" src={logo} alt="LinkedIn logo name" />
                 </Flex >
 
-                <Heading fontWeight={600} padding="2rem 1rem 1.5rem" fontSize="1.5rem">Join LinkedIn now. it's free!</Heading>
+                <Heading fontWeight={600} padding="2rem 1rem 1.5rem" fontSize="1.5rem">Join LinkedIn now — it's free!</Heading>
                 <Flex justifyContent="space-between" flexDir="column" paddingX="1.5rem" w="100%" backgroundColor="white">
                     <form onSubmit={createUser}>
 
@@ -48,7 +48,7 @@ export default function Phone() {
                     <Flex padding="1.5rem 1rem 1rem"
                         // paddingTop="1rem" paddingBottom="1.5rem" 
                         justifyContent="center" align="center">
-                        <Text fontSize="0.875rem" >Already a LinkedIn member?
+                        <Text fontSize="0.875rem" >Already on LinkedIn?
                             <Link fontWeight={700} color="#0a66c2"> Log in</Link>
                         </Text>
                     </Flex>
@@ -56,8 +56,8 @@ export default function Phone() {
                 </Flex>
                 <Flex textAlign="center" paddingTop="1rem" justifyContent="center" w="100%" fontSize="0.875rem">
                     <Text>
-                        Do you want to create a page for your company?
-                        <Link fontWeight={700} color="#0a66c2"> get help</Link>
+                        Looking to create a page for a business?
+                        <Link fontWeight={700} color="#0a66c2"> Get help</Link>
                     </Text>
                 </Flex>
 

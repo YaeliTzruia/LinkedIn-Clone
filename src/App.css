@@ -6,6 +6,15 @@ body {
   filter: invert(42%) sepia(5%) saturate(20%) hue-rotate(347deg) brightness(92%)
     contrast(87%);
 }
+.hover-icon {
+  filter: invert(0%) sepia(4%) saturate(7500%) hue-rotate(164deg)
+    brightness(102%) contrast(104%);
+}
+.isActive {
+  background-color: red;
+  color: #fff;
+}
+
 .slide {
   /* opacity: 0; */
   transition: 4s;

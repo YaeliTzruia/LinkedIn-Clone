@@ -15,7 +15,7 @@ export default function Desktop() {
 
     return (
         <Flex flexDir=" column" justifyContent="center" w="100%" backgroundColor={colors.background}>
-            <Flex flexDir=" column" alignItems="center" w="100%" h={[null, null, "47rem", "64.85rem"]}>
+            <Flex flexDir=" column" alignItems="center" w="100%" h={[null, null, "42rem", "64.85rem"]}>
                 < Flex paddingTop="1.5rem" w={["100%", "100%", "70.5rem", "70.5rem"]} >
                     <Image w="8.438rem" h="2.109rem" src={logo} alt="LinkedIn logo name" />
                 </Flex >

@@ -1,7 +1,6 @@
 import { ChakraProvider, Flex, Image } from "@chakra-ui/react";
 import { Navigate, Route, Routes, Router } from "react-router-dom";
 import "./App.css";
-import Navbar from "./misc/Navbar";
 import theme from "./themes/themes";
 
 import { colors } from "./themes/colors";

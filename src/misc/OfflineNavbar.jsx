@@ -8,7 +8,7 @@ import discover from "../assets/svg/discover.svg"
 
 import AppButton from "../components/AppButton";
 import { colors } from "../themes/colors";
-import AppIconLink from "../components/AppIconLink";
+import AppNavIcon from "../components/AppNavIcon";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -35,7 +35,7 @@ export default function Navbar() {
                             <Flex>
                                 {navbarLinks.map((data) =>
                                     <Flex key={data.text} w="4rem" h="3.25rem" align="center" justifyContent="center" marginX="0.5rem" color={colors.linkText}>
-                                        <AppIconLink className="navbar-images" iconH={data.h} iconW={data.w} text={data.text} icon={data.icon} />
+                                        <AppNavIcon className="navbar-images" iconH={data.h} iconW={data.w} text={data.text} icon={data.icon} />
                                     </Flex>
                                 )}
                             </Flex>
