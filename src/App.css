@@ -10,6 +10,15 @@ body {
   filter: invert(0%) sepia(4%) saturate(7500%) hue-rotate(164deg)
     brightness(102%) contrast(104%);
 }
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: flex;
+}
+
 .isActive {
   background-color: red;
   color: #fff;
