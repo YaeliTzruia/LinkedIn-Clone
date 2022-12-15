@@ -4,7 +4,6 @@ import "./App.css";
 import theme from "./themes/themes";
 
 import { colors } from "./themes/colors";
-import LandingPage from "./pages/landingpage/LandingPage";
 import Join from "./pages/landingpage/Join";
 import routes from "./config/routes";
 import { useState } from "react";

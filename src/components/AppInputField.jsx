@@ -2,7 +2,7 @@ import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, I
 import { useReducer } from "react";
 import { colors } from "../themes/colors";
 
-export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6)", btnBox = "false", isPassword = false, type, border, label, placeholder, buttonW, buttonH, inputRef, isInvalid, btnHight, ...props }) {
+export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6)", btnBox = "false", isPassword = false, type, border, label, placeholder, buttonW, buttonH, inputRef, isInvalid, btnHight, btnMargin = "0.7rem", borderRadius = "50rem", ...props }) {
 
     const [show, setShow] = useReducer(show => !show, false)
 
@@ -17,7 +17,7 @@ export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6
                             } borderColor={border} autoComplete="off" placeholder=' ' {...props} type={show ? "text" : "password"} />
                             <InputLeftElement paddingRight={["0.625rem", "2.5rem", "0.625rem", "0.625rem"]} width={buttonW}>
                                 {btnBox ?
-                                    <Button backgroundColor="transparent" borderRadius="50rem" display="flex" align="center" textDecor="none" marginTop="0.7rem" fontWeight={700} h={btnHight} marginRight="1rem" paddingY="0.5rem" paddingX={["1.7rem", "0.5rem", "1.7rem", "1.7rem"]} color={colors.buttonSecondary} zIndex={2} size='sm' onClick={setShow}>
+                                    <Button backgroundColor="transparent" borderRadius={borderRadius} display="flex" align="center" textDecor="none" marginTop={btnMargin} fontWeight={700} h={btnHight} marginRight="1rem" paddingY="0.5rem" paddingX={["1.7rem", "0.5rem", "1.7rem", "1.7rem"]} color={colors.buttonSecondary} zIndex={2} size='sm' onClick={setShow}>
                                         {show ? 'hide' : 'show'}
                                         {/* paddingLeft="0.625rem" */}
                                     </Button>

@@ -68,7 +68,7 @@ export default function LoggedInNavbar() {
                                 </Flex>
                             </Flex>
 
-                            <Center marginTop="0.4rem" marginRight="0.5rem" color={colors.linkText} border="0.063rem" height='2.313rem'>
+                            <Center opacity="0.2" marginTop="0.4rem" marginRight="0.5rem" color={colors.linkText} border="0.063rem" height='3.1rem'>
                                 <Divider orientation='vertical' />
                             </Center>
                             {navbarLinksRight.map((data, index) =>

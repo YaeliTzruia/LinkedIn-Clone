@@ -1,8 +1,8 @@
 import SignIn from "../pages/AccessAccount/SignIn";
-import Signup from "../pages/AccessAccount/signup/Signup";
+import Signup from "../pages/AccessAccount/signup";
+import LandingPage from "../pages/landingpage/index";
+import Feed from "../pages/loggedIn/feed";
 
-import LandingPage from "../pages/landingpage/LandingPage";
-import Feed from "../pages/loggedIn/feed/Feed";
 import PageNotFound from "../pages/PageNotFound";
 
 const routes = [

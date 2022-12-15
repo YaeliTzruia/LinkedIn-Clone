@@ -4,7 +4,7 @@ import { Center, Divider, Flex, Heading, Image, Input, Link, Text } from "@chakr
 
 import welcome from "../../assets/welcome.svg"
 import AppButton from "../../components/AppButton";
-import AppInputField from "../../components/AppInputFile";
+import AppInputField from "../../components/AppInputField";
 import { colors } from "../../themes/colors";
 import google from "../../assets/google.png"
 import { useNavigate } from "react-router-dom";
@@ -25,8 +25,8 @@ export default function Welcome() {
                             <Flex h="15rem" flexDir="column">
 
                                 <Flex justifyContent="space-between" h="6.7rem" flexDir="column">
-                                    <AppInputField text="Email or phone number" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" w={["20.5rem", "24rem", "100%", "100%"]} h={["3rem", "3rem", "3rem", "3rem"]} />
-                                    <AppInputField w={["20.5rem", "24rem", "100%", "100%"]} isPassword={true} text="Password" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" h="3rem" />
+                                    <AppInputField text="Email or phone number" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" buttonW={["20.5rem", "24rem", "100%", "100%"]} buttonH={["3rem", "3rem", "3rem", "3rem"]} />
+                                    <AppInputField btnMargin="0" w={["20.5rem", "24rem", "100%", "100%"]} isPassword={true} text="Password" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" buttonH="3rem" />
                                 </Flex>
                                 <Link activeClass="active"
                                     marginBottom="1.5rem" marginTop="1rem" fontWeight={500} color={colors.primaryText}>Forgot password?</Link>

@@ -1,14 +1,14 @@
 import { Center, Divider, Flex, Image, useMediaQuery } from "@chakra-ui/react";
 
-import Logo from "../assets/Linkedin-logo.png"
-import jobs from "../assets/svg/jobs.svg"
-import learning from "../assets/svg/learning.svg"
-import people from "../assets/svg/people.svg"
-import discover from "../assets/svg/discover.svg"
+import Logo from "../../assets/Linkedin-logo.png"
+import jobs from "../../assets/svg/jobs.svg"
+import learning from "../../assets/svg/learning.svg"
+import people from "../../assets/svg/people.svg"
+import discover from "../../assets/svg/discover.svg"
 
-import AppButton from "../components/AppButton";
-import { colors } from "../themes/colors";
-import AppNavIcon from "../components/AppNavIcon";
+import AppButton from "../../components/AppButton";
+import { colors } from "../../themes/colors";
+import AppNavIcon from "../../components/AppNavIcon";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {

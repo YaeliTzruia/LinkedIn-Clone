@@ -1,9 +1,10 @@
 import { Flex } from "@chakra-ui/react";
 import LoggedInNavbar from "../../../misc/navbar/LoggedInNavbar";
 import { colors } from "../../../themes/colors";
-import Center from "./Center";
-import Left from "./Left";
-import Right from "./Right";
+import Left from "./left/index";
+import Center from "./center/index";
+import Right from "./right/index";
+
 
 export default function Feed() {
 
