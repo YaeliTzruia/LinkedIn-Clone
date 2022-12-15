@@ -11,7 +11,7 @@ export default function Feed() {
         <Flex flexDir="column" h="60rem" w="100%" backgroundColor={colors.background}>
             <LoggedInNavbar />
             <Flex justifyContent="center" paddingTop="1.5rem">
-                <Flex alignItems="center" justifyContent="space-between" w={["20.5remrem", "25.875rem", "70.5rem", "70.5rem"]} >
+                <Flex justifyContent="space-between" w={["20.5remrem", "25.875rem", "70.5rem", "70.5rem"]} >
                     <Left />
                     <Center />
                     <Right />

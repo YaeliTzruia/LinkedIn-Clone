@@ -19,6 +19,10 @@ body {
   display: flex;
 }
 
+.myDIV2:hover + .hide {
+  display: flex;
+}
+
 .isActive {
   background-color: red;
   color: #fff;
