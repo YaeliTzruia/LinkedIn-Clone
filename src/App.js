@@ -27,7 +27,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
               </>
             ) : (
               <>
@@ -40,7 +40,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
               </>
             )}
           </>
