@@ -20,10 +20,10 @@ export default function TopBottom({ }) {
 
             </Flex>
 
-            <Flex flexDir="column" cursor="pointer" _hover={{ bg: colors.bgHover }} fontWeight={600} fontSize="0.75rem">
-                <AppTextIcon alt="Premium" text="See your Premium features" src={premium} textColor={colors.blackE6} borderBottom={colors.borderBottom} marginRight="0.3rem" w="1rem" h="1rem" />
+            <Flex flexDir="column" fontWeight={600} fontSize="0.75rem">
+                <AppTextIcon imgH="1rem" imgW="1rem" padding="0.75rem" cursor="pointer" hover={{ bg: colors.bgHover }} alt="Premium" text="See your Premium features" src={premium} textColor={colors.blackE6} borderBottom={colors.borderBottom} marginRight="0.3rem" />
 
-                <AppTextIcon alt="My Items Flag" text="My items" src={flag} textColor={colors.blackE6} borderBottom={colors.borderBottom} marginRight='0.45rem' w="1rem" h="1rem" />
+                <AppTextIcon padding="0.75rem" cursor="pointer" hover={{ bg: colors.bgHover }} alt="My Items Flag" text="My items" src={flag} textColor={colors.blackE6} borderBottom={colors.borderBottom} marginRight='0.45rem' />
 
             </Flex>
 

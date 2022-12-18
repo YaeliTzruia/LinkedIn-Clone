@@ -9,5 +9,6 @@ export const colors = {
   mediumGray: "#00000099",
   borderBottom: "0.01px solid rgb(0 0 0 / 16%)",
   blackE6: "#000000E6",
+  boxShadow: "rgba(0, 0, 0, 0.08)",
   bgHover: "rgba(0,0,0,0.08)",
 };
