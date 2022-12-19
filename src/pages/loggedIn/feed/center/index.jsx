@@ -1,9 +1,9 @@
-import { Flex, Divider } from "@chakra-ui/react";
+import { Flex, Divider, Center } from "@chakra-ui/react";
 import ShareBox from "./ShareBox";
 import FeedBox from "./FeedBox";
 import { colors } from "../../../../themes/colors";
 
-export default function Center() {
+export default function CenterPart() {
 
 
     return (
@@ -12,9 +12,7 @@ export default function Center() {
             <Flex borderRadius="0.3rem" backgroundColor="white" w="33.75rem">
                 <ShareBox />
             </Flex>
-            <Center margin="0.5rem" w="27.628rem" orientation='horizontal' >
-                <Divider color="black" />
-            </Center>
+            <Flex marginY="1rem" borderBottom={`2px solid rgba(0,0,0,0.08)`} />
 
             <Flex borderRadius="0.3rem" backgroundColor="white" w="33.75rem">
 

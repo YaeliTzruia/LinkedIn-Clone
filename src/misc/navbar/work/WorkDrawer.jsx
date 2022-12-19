@@ -1,8 +1,10 @@
 import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Image, Input, Text } from "@chakra-ui/react";
-import { colors } from "../themes/colors";
-import downArrow from "../assets/svg/down-arrow.svg"
+import { colors } from "../../../themes/colors";
+import downArrow from "../../../assets/svg/down-arrow.svg"
+import Visit from "./Visit";
+import BusinessServices from "./BusinessServices";
 
-export default function AppNavDrawer({ isOpen, onOpen, onClose, workRef, icon, iconW, iconH, text, className, fontSize }) {
+export default function WorkDrawer({ isOpen, onOpen, onClose, workRef, icon, iconW, iconH, text, className, fontSize }) {
 
 
     return (
@@ -34,15 +36,11 @@ export default function AppNavDrawer({ isOpen, onOpen, onClose, workRef, icon, i
 
 
                     <DrawerBody>
-                        <Input placeholder='Type here...' />
+                        <Visit />
+                        < BusinessServices />
                     </DrawerBody>
 
-                    <DrawerFooter>
-                        <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
-                        </Button>
-                        <Button colorScheme='blue'>Save</Button>
-                    </DrawerFooter>
+
                 </DrawerContent>
             </Drawer>
         </>

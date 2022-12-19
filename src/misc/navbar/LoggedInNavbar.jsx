@@ -21,7 +21,7 @@ import useNavbar from "../../hooks/useAuth";
 import useAuth from "../../hooks/useAuth";
 import { useRef } from "react";
 import AppNavProfileDorpdown from "../../components/AppNavProfileDropdown";
-import AppNavDrawer from "../../components/AppNavDrawer";
+import AppNavDrawer from "./work/WorkDrawer";
 
 export default function LoggedInNavbar() {
 

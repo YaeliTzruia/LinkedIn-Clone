@@ -5,6 +5,7 @@ import wordpress from "../../../../assets/wordpress.jpeg"
 import hebrewAdd from "../../../../assets/hebrewAdd.jpeg"
 import confidence from "../../../../assets/writeConfident.jpeg"
 import arrow from "../../../../assets/svg/add-arrow-right.svg"
+import { colors } from "../../../../themes/colors";
 
 
 export default function Promoted() {
@@ -23,10 +24,10 @@ export default function Promoted() {
             </Flex>
             <Flex flexDir="column">
                 {promote.map((data) =>
-                    <Flex align="center" marginTop="0.25rem" textAlign="left" lineHeight="1.05rem" w="18.75rem" h="4.438rem" key={data.title}>
+                    <Flex cursor="pointer" align="center" marginTop="0.25rem" textAlign="left" lineHeight="1.05rem" w="18.75rem" h="4.438rem" key={data.title}>
                         <Image marginRight="0.5rem" w="3.25rem" h="3.25rem" alt={data.title} src={data.img} />
                         <Flex flexDir="column">
-                            <Text fontSize="0.875rem">{data.title}</Text>
+                            <Text _hover={{ textDecor: "underline", color: colors.buttonSecondary }} fontSize="0.875rem">{data.title}</Text>
                             <Text fontSize="0.75rem">{data.desc}</Text>
                         </Flex>
                         <Image h="1.4rem" alt="arrow right" src={arrow} />
