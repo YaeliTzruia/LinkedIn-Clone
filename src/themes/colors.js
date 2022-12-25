@@ -11,4 +11,5 @@ export const colors = {
   blackE6: "#000000E6",
   boxShadow: "rgba(0, 0, 0, 0.08)",
   bgHover: "rgba(0,0,0,0.08)",
+  errorRed: "#D11124",
 };

@@ -2,12 +2,12 @@ import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, I
 import { useReducer } from "react";
 import { colors } from "../themes/colors";
 
-export default function AppInputField({ variant, labelColor = "rgba(0, 0, 0, 0.6)", btnBox = "false", isPassword = false, type, border, label, placeholder, buttonW, buttonH, inputRef, isInvalid, btnHight, btnMargin = "0.7rem", borderRadius = "50rem", ...props }) {
+export default function AppInputField({ variant, labelMarginTop = "0", labelColor = "rgba(0, 0, 0, 0.6)", btnBox = "false", isPassword = false, type, border, label, placeholder, buttonW, buttonH, inputRef, isInvalid, btnHight, btnMargin = "0.7rem", borderRadius = "50rem", ...props }) {
 
     const [show, setShow] = useReducer(show => !show, false)
 
     return (
-        <FormControl variant={variant} isInvalid={isInvalid}>
+        <FormControl marginTop={labelMarginTop} variant={variant} isInvalid={isInvalid}>
             <FormLabel marginBottom="0.25rem" fontSize="0.875rem" color={labelColor}>{label}</FormLabel>
             < InputGroup size='md' >
                 {

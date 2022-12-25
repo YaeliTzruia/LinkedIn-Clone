@@ -80,7 +80,7 @@ export default function SignIn() {
 
                     </Flex>
                 </Flex>
-                <Text marginTop={["2rem", "0.8rem", "2rem", "2rem"]}> New to LinkedIn?<Link fontWeight={600} color="#0a66c2"> Join now</Link></Text>
+                <Text marginTop={["2rem", "0.8rem", "2rem", "2rem"]}> New to LinkedIn?<Link href="/signup" fontWeight={600} color="#0a66c2"> Join now</Link></Text>
             </Flex>
             {!isSmallScreen &&
                 <Flex margin="0" w="100%" h="3.125rem" backgroundColor="white">
