@@ -2,7 +2,7 @@ import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { colors } from "../../../../themes/colors";
 import dots from "../../../../assets/svg/three-dots.svg"
 import publicPost from "../../../../assets/svg/post-public-earth.svg"
-import useAuth from "../../../../hooks/useAuth";
+import useAuth from "../../../../hooks/useUserInfo";
 import PostButtons from "./PostButtons";
 import Likes from "./Likes";
 

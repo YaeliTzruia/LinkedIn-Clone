@@ -34,7 +34,7 @@ const routes = [
     path: "/feed",
     component: <Feed />,
     lable: "Not-Found",
-    protected: false,
+    protected: true,
   },
 ];
 

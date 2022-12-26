@@ -1,15 +1,16 @@
-import { Divider, Flex, Image, Center, Text, Link, Heading, useMediaQuery } from "@chakra-ui/react";
+import { Divider, Flex, Image, Center, Text, Link, Heading, useMediaQuery, FormControl } from "@chakra-ui/react";
 import logo from "../../assets/svg/linkedin.svg"
 import AppButton from "../../components/AppButton";
 import AppInputField from "../../components/AppInputField";
-import useSignIn from "../../hooks/useSignIn";
 import CopyRight from "../../misc/footer/CopyRight";
 import google from "../../assets/google.png"
 import apple from "../../assets/apple-logo.png"
 import { colors } from "../../themes/colors";
+import useFormikData from "../../hooks/useFormik";
 export default function SignIn() {
     const [isSmallScreen] = useMediaQuery("(max-width: 900px)");
-    const { loginUser, passwordProps, emailProps, error } = useSignIn()
+
+    const { signinFormik } = useFormikData()
 
     const shadow = "0 4px 12px rgb(0 0 0 / 15%)"
 
@@ -30,19 +31,33 @@ export default function SignIn() {
                 <Image w="6.8rem" h="1.75rem" src={logo} alt="LinkedIn logo name" />
             </Flex >
             <Flex justifyContent="center" flexDir=" column" alignItems="center" w="100%" h={[null, null, "37.5rem", "60.5rem"]}>
-                <Flex boxShadow={[null, null, shadow, shadow]} flexDir="column" borderRadius="0.5rem" padding="1.5rem" w={["100%", "100%", "22rem", "22rem"]} h={["30.5rem", "31.7rem", "31.999rem", "31.999rem"]} backgroundColor="white">
+                <Flex boxShadow={[null, null, shadow, shadow]} flexDir="column" borderRadius="0.5rem" padding="1.5rem" w={["100%", "100%", "22rem", "22rem"]} minH={["30.5rem", "31.7rem", "31.999rem", "31.999rem"]} backgroundColor="white">
                     <Flex paddingLeft={["0.55rem", "0.55rem", "0", "0"]} marginBottom="1rem" flexDir="column">
                         <Heading fontWeight={700} fontSize="2rem">Sign in</Heading>
                         <Text fontSize="0.875rem">Stay updated on your professional world</Text>
                     </Flex>
                     <Flex w={["100%", "100%", "19rem", "19rem"]} justifyContent="space-between" flexDir="column">
-                        <form onSubmit={loginUser}>
+                        <form onSubmit={signinFormik.handleSubmit}>
 
 
-                            <AppInputField variant="floating" fontSize="1.125rem" paddingX="0.75rem" paddingBottom="0.375rem" paddingTop="1.75rem" color="black" border="rgba(0,0,0,0.6)" w={["18.5rem", "21.875rem", "19rem", "19rem"]} h="3.25rem" marginBottom="1.5rem" isInvalid={error} {...emailProps} label="Email or Phone" type="email" />
+                            <AppInputField isLogin isInvalid={signinFormik.errors.email &&
+                                signinFormik.touched.email} name="email" onChange={signinFormik.handleChange} value={signinFormik.values.email} variant="floating" fontSize="1.125rem" paddingX="0.75rem" paddingBottom="0.375rem" paddingTop="1.75rem" color="black" border="rgba(0,0,0,0.6)" w={["18.5rem", "21.875rem", "19rem", "19rem"]} h="3.25rem" marginBottom="1.5rem" label="Email or Phone" type="email" />
+                            {
+                                signinFormik.errors.email && signinFormik.touched.email ?
+                                    <Text fontSize="0.875rem" color={colors.errorRed}>{signinFormik.errors.email}</Text>
+                                    : null
+                            }
 
-                            <AppInputField variant="floating" btnBox={true} fontSize="1.125rem" paddingX="0.75rem" paddingBottom="0.375rem" paddingTop="1.75rem" btnHight="1.5rem" border="rgba(0,0,0,0.6)" w={["18.5rem", "21.875rem", "19rem", "19rem"]} h="3.25rem" isInvalid={error} placeholder=" "
-                                {...passwordProps} {...error ? { border: "1px solid red" } : null} label="Password" isPassword />
+
+                            <AppInputField isLogin isInvalid={signinFormik.errors.password &&
+                                signinFormik.touched.password} name="password" onChange={signinFormik.handleChange} value={signinFormik.values.password} variant="floating" btnBox={true} fontSize="1.125rem" paddingX="0.75rem" paddingBottom="0.375rem" paddingTop="1.75rem" btnHight="1.5rem" border="rgba(0,0,0,0.6)" w={["18.5rem", "21.875rem", "19rem", "19rem"]} h="3.25rem" placeholder=" "
+                                label="Password" isPassword />
+                            {
+                                signinFormik.errors.password && signinFormik.touched.password ?
+                                    <Text fontSize="0.875rem" color={colors.errorRed}>{signinFormik.errors.password}</Text>
+                                    : null
+                            }
+
                             <Flex marginBottom="0.5rem" align="center" h="3.3rem">
                                 <Link
                                     borderRadius="10rem" paddingY="0.2rem" paddingX="0.5rem" fontSize="1rem" fontWeight={[700, 700, 600, 600]} _hover={{ backgroundColor: "#0f85e73d", }} backgroundColor="transparent" color={colors.buttonSecondary}>Forgot password?

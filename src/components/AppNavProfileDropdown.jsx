@@ -1,6 +1,6 @@
 import { Button, Flex, Image, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
 import downArrow from "../assets/svg/down-arrow.svg"
-import useAuth from "../hooks/useAuth"
+import useAuth from "../hooks/useUserInfo"
 import { colors } from "../themes/colors"
 
 export default function AppNavProfileDorpdown({ text }) {

@@ -1,9 +1,10 @@
-import useSignup from "./useSignup"
 import { SignupSchema } from "../schema/SignupSchema"
 import { useFormik } from "formik"
+import useAuth from "./useAuth"
 
 export default function useFormikData() {
-    const { createUser } = useSignup()
+
+    const { createUser, signinUser } = useAuth()
 
     const signupFormik = useFormik({
         initialValues: {
@@ -17,5 +18,19 @@ export default function useFormikData() {
             createUser(values)
         },
     })
-    return { signupFormik }
+
+    const signinFormik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validationSchema: SignupSchema,
+
+        onSubmit: async (values) => {
+
+            signinUser(values)
+        },
+    })
+
+    return { signupFormik, signinFormik }
 }

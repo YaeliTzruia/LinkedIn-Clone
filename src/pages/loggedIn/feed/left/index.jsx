@@ -1,5 +1,5 @@
 import { Button, color, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import useAuth from "../../../../hooks/useAuth";
+import useAuth from "../../../../hooks/useUserInfo";
 import { colors } from "../../../../themes/colors";
 import arrowUp from "../../../../assets/svg/arrowUp.svg"
 

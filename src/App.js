@@ -7,16 +7,17 @@ import { colors } from "./themes/colors";
 import Join from "./pages/landingpage/Join";
 import routes from "./config/routes";
 import { useState } from "react";
+import useAuth from "./hooks/useUserInfo";
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { accessAccount, loading } = useAuth();
+
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">
         <Routes>
           <>
-            {!loading && loggedIn ? (
+            {loading ? null : accessAccount ? (
               <>
                 {routes
                   .filter((r) => r.protected)
@@ -27,7 +28,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                {/* <Route path="*" element={<Navigate to="/" />} /> */}
+                <Route path="*" element={<Navigate to="/feed" />} />
               </>
             ) : (
               <>
@@ -40,7 +41,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                {/* <Route path="*" element={<Navigate to="/" />} /> */}
+                <Route path="*" element={<Navigate to="/" />} />
               </>
             )}
           </>

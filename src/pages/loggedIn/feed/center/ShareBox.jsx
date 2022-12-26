@@ -1,6 +1,6 @@
 import { Button, Flex, Image, Text } from "@chakra-ui/react";
 import { colors } from "../../../../themes/colors"
-import useAuth from "../../../../hooks/useAuth"
+import useAuth from "../../../../hooks/useUserInfo"
 import photo from "../../../../assets/svg/photo-post.svg"
 import video from "../../../../assets/svg/video-add.svg"
 import audio from "../../../../assets/svg/audio-add.svg"

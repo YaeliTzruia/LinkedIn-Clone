@@ -5,12 +5,7 @@ import google from "../../../assets/google.png"
 import AppInputField from "../../../components/AppInputField";
 import AppButton from "../../../components/AppButton";
 import CopyRight from "../../../misc/footer/CopyRight";
-import useSignup from "../../../hooks/useSignup"
 import { colors } from "../../../themes/colors";
-import { ErrorMessage, Form, Formik } from "formik";
-import { SignupSchema } from "../../../schema/SignupSchema";
-// import { initialValuesSignup } from "../../../../initialValues/Signup";
-import useFormik from "../../../hooks/useFormik";
 import useFormikData from "../../../hooks/useFormik";
 
 
@@ -19,8 +14,6 @@ export default function Desktop() {
 
     const { signupFormik } = useFormikData()
 
-    const { createUser, passwordProps, emailProps, error } = useSignup()
-    console.log(signupFormik.errors.password)
     return (
         <>
             <Flex flexDir=" column" justifyContent="center" w="100%" backgroundColor={colors.background}>
@@ -32,32 +25,21 @@ export default function Desktop() {
                     <Flex justifyContent="space-between" flexDir="column" borderRadius="0.5rem" padding="1.5rem" w={["100%", "100%", "25rem", "25rem"]} backgroundColor="white">
 
                         <form onSubmit={signupFormik.handleSubmit}>
-                            <FormControl
-                                isInvalid={
-                                    signupFormik.errors.email &&
-                                    signupFormik.touched.email
-                                }
-                            >
-                                <AppInputField isInvalid={signupFormik.errors.email &&
-                                    signupFormik.touched.email} label="Email" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" name="email" type="email" onChange={signupFormik.handleChange} value={signupFormik.values.email} />
-                                {signupFormik.errors.email && signupFormik.touched.email ? <Text fontSize="0.875rem" color={colors.errorRed}>{signupFormik.errors.email}</Text> : null}
-                            </FormControl>
 
-                            {/* <ErrorMessage name="email" /> */}
+                            <AppInputField isInvalid={signupFormik.errors.email &&
+                                signupFormik.touched.email} label="E-mail" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" name="email" type="email" onChange={signupFormik.handleChange} value={signupFormik.values.email} />
+                            {signupFormik.errors.email && signupFormik.touched.email ? <Text fontSize="0.875rem" color={colors.errorRed}>{signupFormik.errors.email}</Text> : null}
 
-                            <FormControl
-                                isInvalid={
-                                    signupFormik.errors.password &&
-                                    signupFormik.touched.password
-                                }
-                            >
-                                <AppInputField labelMarginTop="1rem" isInvalid={signupFormik.errors.password &&
-                                    signupFormik.touched.password} btnHight="2rem" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" name="password"
-                                    onChange={signupFormik.handleChange} value={signupFormik.values.password}
-                                    {...error ? { border: "1px solid red" } : null} label="Password (6 or more characters)" isPassword btnBox={false} />
-                                {/* <ErrorMessage name="password" /> */}
-                                {signupFormik.errors.password && signupFormik.touched.password ? <Text fontSize="0.875rem" color={colors.errorRed}>{signupFormik.errors.password}</Text> : null}
-                            </FormControl>
+
+
+
+                            <AppInputField labelMarginTop="1rem" isInvalid={signupFormik.errors.password &&
+                                signupFormik.touched.password} btnHight="2rem" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" name="password"
+                                onChange={signupFormik.handleChange} value={signupFormik.values.password}
+                                label="Password (6 or more characters)" isPassword btnBox={false} />
+                            {/* <ErrorMessage name="password" /> */}
+                            {signupFormik.errors.password && signupFormik.touched.password ? <Text fontSize="0.875rem" color={colors.errorRed}>{signupFormik.errors.password}</Text> : null}
+
 
                             <Flex marginY="0.8rem" justifyContent="center" textAlign="center">
                                 <Text color="#00000099" fontSize="0.75rem">By clicking Agree & Join, you agree to the LinkedIn
