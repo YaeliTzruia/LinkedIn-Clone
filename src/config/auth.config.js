@@ -14,8 +14,26 @@ export const authConfig = {
     try {
       const res = await axios.post("http://localhost:5001/auth/signin", values);
       return res;
-    } catch (err) {
-      return err;
+    } catch (error) {
+      return error;
+    }
+  },
+  handleLogout: async () => {
+    const res = await axios.get("http://localhost:5001/user/logout", {
+      withCredentials: true,
+    });
+    return res;
+  },
+  getCurrentUser: async () => {
+    try {
+      const user = await axios.get("http://localhost:5001/user/me", {
+        withCredentials: true,
+      });
+      console.log(user, "user");
+      return user;
+    } catch (error) {
+      console.log(error);
+      return error;
     }
   },
   //   handleLogout: async () => {

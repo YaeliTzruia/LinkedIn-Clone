@@ -1,10 +1,12 @@
 import { Button, Flex, Image, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
 import downArrow from "../assets/svg/down-arrow.svg"
+import { authConfig } from "../config/auth.config"
 import useAuth from "../hooks/useUserInfo"
 import { colors } from "../themes/colors"
 
 export default function AppNavProfileDorpdown({ text }) {
     const { profileImg, userFullName, profession } = useAuth()
+    const { handleLogout } = authConfig
 
     const account = [
         { name: "Settings & Privacy" },
@@ -70,7 +72,7 @@ export default function AppNavProfileDorpdown({ text }) {
                     )}
                 </Flex>
                 <MenuItem _hover={{ bg: "transparent" }} w="16.5rem" h="1.75rem" borderBottom={colors.borderBottom} alignItems="flex-start" flexDir="column" minH='40px'>
-                    <Text _hover={{ borderBottom: "0.5px solid black" }} padding="0" alignItems="flex-start" fontWeight={400} color={colors.linkText} fontSize="0.875rem" variant="ghost">Sign Out</Text>
+                    <Button onClick={handleLogout} marginTop="0.3rem" height="1.1rem" paddingBottom="0" borderBottomRadius="0" variant="ghost" _hover={{ borderBottom: "1px solid black" }} padding="0" alignItems="flex-start" fontWeight={400} color={colors.linkText} fontSize="0.875rem">Sign Out</Button>
                 </MenuItem>
             </MenuList>
         </Menu>

@@ -7,11 +7,12 @@ import { colors } from "./themes/colors";
 import Join from "./pages/landingpage/Join";
 import routes from "./config/routes";
 import { useState } from "react";
-import useAuth from "./hooks/useUserInfo";
+import useAuth from "./hooks/useAuth";
 
 function App() {
   const { accessAccount, loading } = useAuth();
 
+  console.log(accessAccount, "accessAccount");
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">
