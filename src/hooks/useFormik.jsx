@@ -1,8 +1,11 @@
 import { SignupSchema } from "../schema/SignupSchema"
 import { useFormik } from "formik"
 import useAuth from "./useAuth"
+import { useState } from "react"
+import { SetupSchema } from "../schema/SetupSchema"
 
 export default function useFormikData() {
+    const [currentStep, setCurrentStep] = useState(0)
 
     const { createUser, signinUser } = useAuth()
 
@@ -10,6 +13,8 @@ export default function useFormikData() {
         initialValues: {
             email: '',
             password: '',
+            firstName: '',
+            lastName: ''
         },
         validationSchema: SignupSchema,
 
@@ -27,10 +32,23 @@ export default function useFormikData() {
         validationSchema: SignupSchema,
 
         onSubmit: async (values) => {
+            console.log(values, "values")
+            // signinUser(values)
+        }
+    })
+    const AddProfileDataFormik = useFormik({
+        initialValues: {
+            country: '',
+            city: '',
 
-            signinUser(values)
+        },
+        validationSchema: SetupSchema,
+
+        onSubmit: async (values) => {
+            console.log(values, "values")
+            // signinUser(values)
         },
     })
 
-    return { signupFormik, signinFormik }
+    return { signupFormik, signinFormik, AddProfileDataFormik, currentStep, setCurrentStep }
 }

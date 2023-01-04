@@ -39,11 +39,9 @@ export default function useAuth() {
             setAccessAcount(false)
             return res?.response?.data?.msg
         } else {
-            console.log(res.status, "res.status")
             setAccessAcount(true)
+            navigate("/feed")
             setLoading(false)
-            // navigate("/feed")
-            console.log(accessAccount, "accessAccount auth")
             return res
         }
     }
@@ -57,13 +55,24 @@ export default function useAuth() {
                 setAccessAcount(true);
                 return currentUser
             }
+
         } catch (error) {
             console.error('failed getting user details', error)
             return error
         }
     }
 
+    const signout = async () => {
+        try {
+            const logout = await authConfig.handleLogout()
+            return logout
+        } catch (error) {
+            console.error('failed signout', error)
+            return error
+        }
+    }
+
     return {
-        createUser, signinUser, getCurrentUser, accessAccount, loading, setLoading
+        createUser, signout, signinUser, getCurrentUser, accessAccount, loading, setLoading
     }
 }

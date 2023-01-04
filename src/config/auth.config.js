@@ -19,7 +19,7 @@ export const authConfig = {
     }
   },
   handleLogout: async () => {
-    const res = await axios.get("http://localhost:5001/user/logout", {
+    const res = await axios.get("http://localhost:5001/auth/logout", {
       withCredentials: true,
     });
     return res;

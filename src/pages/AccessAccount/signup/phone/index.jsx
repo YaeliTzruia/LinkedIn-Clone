@@ -1,11 +1,10 @@
 import { Center, Divider, Flex, FormControl, Heading, Image, Link, Text } from "@chakra-ui/react";
-import logo from "../../../assets/svg/linkedin.svg"
-import google from "../../../assets/google.png"
-import AppButton from "../../../components/AppButton";
-import { colors } from "../../../themes/colors";
-import useSignup from "../../../hooks/useAuth";
-import AppInputField from "../../../components/AppInputField";
-import useFormikData from "../../../hooks/useFormik";
+import logo from "../../../../assets/svg/linkedin.svg"
+import google from "../../../../assets/google.png"
+import AppButton from "../../../../components/AppButton";
+import { colors } from "../../../../themes/colors";
+import AppInputField from "../../../../components/AppInputField";
+import useFormikData from "../../../../hooks/useFormik";
 export default function Phone() {
 
     const { signupFormik } = useFormikData()
