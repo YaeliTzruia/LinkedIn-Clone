@@ -8,10 +8,18 @@ import CopyRight from "../../../../../misc/footer/CopyRight";
 import { colors } from "../../../../../themes/colors";
 import useFormikData from "../../../../../hooks/useFormik";
 
-export default function FirstStep() {
+export default function FirstStep({ handleNextStep }) {
 
     const { signupFormik } = useFormikData()
 
+    const submit = (e, values) => {
+        e.preventDefault()
+        console.log(values)
+        // signupFormik()
+        // signupFormik.handleSubmit(values)
+        // handleNextStep(values)
+    }
+    // console.log(signupFormik.values, "values")
     return (
         <Flex flexDir=" column" justifyContent="center" w="100%" backgroundColor={colors.background}>
             <Flex flexDir=" column" alignItems="center" w="100%" h={[null, null, "42rem", "64.85rem"]}>
@@ -21,7 +29,9 @@ export default function FirstStep() {
                 <Heading fontWeight={400} paddingY="1.5rem" paddingX="1rem" fontSize="2rem">Make the most of your professional life</Heading>
                 <Flex justifyContent="space-between" flexDir="column" borderRadius="0.5rem" padding="1.5rem" w={["100%", "100%", "25rem", "25rem"]} backgroundColor="white">
 
-                    <form onSubmit={signupFormik.handleSubmit}>
+                    <form onSubmit={() => {
+                        submit()
+                    }}>
 
                         <AppInputField isInvalid={signupFormik.errors.email &&
                             signupFormik.touched.email} label="E-mail" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" name="email" type="email" onChange={signupFormik.handleChange} value={signupFormik.values.email} />

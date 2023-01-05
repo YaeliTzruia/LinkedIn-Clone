@@ -1,22 +1,24 @@
 import { Button, Flex, Image, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import downArrow from "../assets/svg/down-arrow.svg"
 import { authConfig } from "../config/auth.config"
+import { userContext } from "../context/userContext"
 import useAuth from "../hooks/useAuth"
 import useUserInfo from "../hooks/useUserInfo"
 import { colors } from "../themes/colors"
 
 export default function AppNavProfileDorpdown({ text }) {
-    const { profileImg, userFullName, profession } = useUserInfo()
-    const { signout, setLoading } = useAuth()
+    const { userInformation, profession, profileImg, setLoading, fullName } = useContext(userContext)
+    const { signout } = useAuth()
     const navigate = useNavigate()
 
-    const signoutUser = () => {
-        setLoading(true)
-        signout()
-        setLoading(false)
-        navigate("/")
-    }
+    // const signoutUser = () => {
+    //     setLoading(true)
+    //     signout()
+    //     setLoading(false)
+    //     navigate("/")
+    // }
 
 
     const account = [
@@ -58,7 +60,7 @@ export default function AppNavProfileDorpdown({ text }) {
                             h="3.5rem"
                         />
                         <Flex color={colors.blackE6} paddingLeft="0.5rem" flexDir="column">
-                            <Text fontWeight={700} fontSize="1rem">{userFullName}</Text>
+                            <Text fontWeight={700} fontSize="1rem">{fullName}</Text>
                             <Text fontSize="0.875rem">{profession}</Text>
                         </Flex>
                     </Flex>
@@ -67,7 +69,7 @@ export default function AppNavProfileDorpdown({ text }) {
                 <Flex padding="0.5rem" borderBottom={colors.borderBottom} alignItems="flex-start" flexDir="column">
                     <Text fontWeight={700} fontSize="1rem">Account</Text>
                     {account.map((data) =>
-                        <MenuItem _hover={{ bg: "transparent" }} h="1.75rem" padding="0">
+                        <MenuItem key={data.name} _hover={{ bg: "transparent" }} h="1.75rem" padding="0">
                             <Text padding="0" _hover={{ borderBottom: "0.5px solid black" }} color={colors.linkText} fontSize="0.875rem" key={data.name}>{data.name}
                             </Text>
                         </MenuItem>
@@ -83,7 +85,7 @@ export default function AppNavProfileDorpdown({ text }) {
                     )}
                 </Flex>
                 <MenuItem _hover={{ bg: "transparent" }} w="16.5rem" h="1.75rem" borderBottom={colors.borderBottom} alignItems="flex-start" flexDir="column" minH='40px'>
-                    <Button onClick={signoutUser} marginTop="0.3rem" height="1.1rem" paddingBottom="0" borderBottomRadius="0" variant="ghost" _hover={{ borderBottom: "1px solid black" }} padding="0" alignItems="flex-start" fontWeight={400} color={colors.linkText} fontSize="0.875rem">Sign Out</Button>
+                    <Button onClick={signout} marginTop="0.3rem" height="1.1rem" paddingBottom="0" borderBottomRadius="0" variant="ghost" _hover={{ borderBottom: "1px solid black" }} padding="0" alignItems="flex-start" fontWeight={400} color={colors.linkText} fontSize="0.875rem">Sign Out</Button>
                 </MenuItem>
             </MenuList>
         </Menu>

@@ -1,18 +1,15 @@
-import { ChakraProvider, Flex, Image } from "@chakra-ui/react";
-import { Navigate, Route, Routes, Router } from "react-router-dom";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import theme from "./themes/themes";
-
-import { colors } from "./themes/colors";
-import Join from "./pages/landingpage/Join";
 import routes from "./config/routes";
-import { useState } from "react";
-import useAuth from "./hooks/useAuth";
+import { useContext } from "react";
+import UserProvider, { userContext } from "./context/userContext";
 
 function App() {
-  const { accessAccount, loading } = useAuth();
+  const { accessAccount, loading } = useContext(userContext);
 
-  console.log(accessAccount, "accessAccount");
+  console.log(accessAccount, "accessAccount", loading, "loading", "app");
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">

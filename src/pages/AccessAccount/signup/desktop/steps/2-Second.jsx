@@ -7,8 +7,14 @@ import { colors } from "../../../../../themes/colors";
 import useFormikData from "../../../../../hooks/useFormik";
 
 
-export default function SecondStep() {
+export default function SecondStep({ handleNextStep }) {
     const { signupFormik } = useFormikData()
+
+
+    const submit = (values) => {
+        signupFormik.handleSubmit(values)
+        handleNextStep(values)
+    }
 
     return (
         <Flex flexDir=" column" justifyContent="center" w="100%" backgroundColor={colors.background}>
@@ -19,7 +25,9 @@ export default function SecondStep() {
                 <Heading fontWeight={400} paddingY="1.5rem" paddingX="1rem" fontSize="2rem">Make the most of your professional life</Heading>
                 <Flex justifyContent="space-between" flexDir="column" borderRadius="0.5rem" padding="1.5rem 1.5rem 0 1.5rem" w={["100%", "100%", "25rem", "25rem"]} backgroundColor="white">
 
-                    <form onSubmit={signupFormik.handleSubmit}>
+                    <form onSubmit={(values) => {
+                        submit(values)
+                    }}>
 
                         <AppInputField name="firstName" isInvalid={signupFormik.errors.firstName &&
                             signupFormik.touched.firstName} label="First name" border="rgba(0,0,0,0.6)" w="22rem" h="2rem" type="text" onChange={signupFormik.handleChange} value={signupFormik.values.firstName} />

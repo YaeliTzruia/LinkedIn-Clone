@@ -22,7 +22,7 @@ export default function PostButtons() {
                 color={colors.mediumGray} _hover={{ bg: colors.bgHover }} variant="ghost" w="6.89rem" padding="0.625rem 0.5rem" h="3rem"><Image marginRight="0.25rem" alt="Like" src={like} />Like
             </Button>
             {buttons.map((data) =>
-                <Button color={colors.mediumGray} _hover={{ bg: colors.bgHover }} variant="ghost" w={data.w} padding="0.625rem 0.5rem" h="3rem"><Image marginRight="0.25rem" alt={data.text} src={data.icon} />{data.text}</Button>
+                <Button key={data.text} color={colors.mediumGray} _hover={{ bg: colors.bgHover }} variant="ghost" w={data.w} padding="0.625rem 0.5rem" h="3rem"><Image marginRight="0.25rem" alt={data.text} src={data.icon} />{data.text}</Button>
             )}
         </Flex>
     )

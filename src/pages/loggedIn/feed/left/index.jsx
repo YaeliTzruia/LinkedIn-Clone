@@ -1,23 +1,25 @@
 import { Button, color, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import useAuth from "../../../../hooks/useUserInfo";
+import userInfo from "../../../../hooks/useUserInfo";
 import { colors } from "../../../../themes/colors";
 import arrowUp from "../../../../assets/svg/arrowUp.svg"
 
 import arrowDown from "../../../../assets/svg/arrowDown.svg"
 import people from "../../../../assets/svg/three-people.svg"
-import { useReducer } from "react";
+import { useContext, useReducer } from "react";
 
 import Recent from "./Recent";
 import Groups from "./Groups";
 import ImageNdHeader from "./Image&Header";
 import TopBottom from "./TopBottom";
 import BottomLinks from "./BottomLinks";
+import useAuth from "../../../../hooks/useAuth";
+import { userContext } from "../../../../context/userContext";
 
 export default function Left() {
-
-    const { profileImg, banner, userFullName, profession } = useAuth()
+    const { userInformation, banner, profession, profileImg, setLoading, fullName } = useContext(userContext)
     const [visible, setisvisible] = useReducer((prev) => !prev, true)
     const [visibleG, setisvisibleG] = useReducer((prev) => !prev, true)
+
 
 
     return (
@@ -25,7 +27,7 @@ export default function Left() {
 
             <Flex flexDir="column" borderRadius="0.3rem" bg="white" w="14.063rem">
                 <ImageNdHeader
-                    profession={profession} userFullName={userFullName} profileImg={profileImg} banner={banner}
+                    profession={profession} userFullName={fullName} profileImg={profileImg} banner={banner}
                 />
                 <TopBottom />
             </Flex>

@@ -7,15 +7,13 @@ import useAuth from "./useAuth"
 export default function useUserInfo() {
 
 
+
     const [profileImg, setProfileImg] = useState(profilePic)
     const [banner, setBanner] = useState(bannerImg)
-    const [userFullName, setUserFullName] = useState("Kesy Lottie")
+    const [userFullName, setUserFullName] = useState("sara")
     const [profession, setProfession] = useState("Software Developer")
 
     const { setLoading, getCurrentUser } = useAuth()
-
-
-
 
 
 

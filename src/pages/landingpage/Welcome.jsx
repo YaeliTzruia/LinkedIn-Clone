@@ -1,4 +1,4 @@
-import { Center, Divider, Flex, Heading, Image, Input, Link, Text } from "@chakra-ui/react";
+import { Center, Divider, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 
 
 
@@ -26,7 +26,7 @@ export default function Welcome() {
 
                                 <Flex justifyContent="space-between" h="6.7rem" flexDir="column">
                                     <AppInputField text="Email or phone number" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" buttonW={["20.5rem", "24rem", "100%", "100%"]} buttonH={["3rem", "3rem", "3rem", "3rem"]} />
-                                    <AppInputField btnMargin="0" w={["20.5rem", "24rem", "100%", "100%"]} isPassword={true} text="Password" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" buttonH="3rem" />
+                                    <AppInputField btnMargin="0" w={["20.5rem", "24rem", "100%", "100%"]} isPassword text="Password" border={`1px solid rgba(0,0,0,0.6)`} borderRadius="0.125rem" buttonH="3rem" />
                                 </Flex>
                                 <Link activeClass="active"
                                     marginBottom="1.5rem" marginTop="1rem" fontWeight={500} color={colors.primaryText}>Forgot password?</Link>

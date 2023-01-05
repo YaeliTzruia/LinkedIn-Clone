@@ -1,24 +1,18 @@
-import { Box, Button, Center, color, Divider, Flex, Image, Link, useDisclosure, useMediaQuery } from "@chakra-ui/react";
+import { Box, Center, Divider, Flex, Image, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 
 import Logo from "../../assets/linkedin-2.png"
 import jobs from "../../assets/svg/jobs.svg"
 import work from "../../assets/svg/work2.svg"
-import learning from "../../assets/svg/learning.svg"
+
 import people from "../../assets/svg/people.svg"
 import home from "../../assets/svg/home.svg"
 import messaging from "../../assets/svg/messaging.svg"
-import magnifyingGlass from "../../assets/svg/magnifying-glass.svg"
 import notifications from "../../assets/svg/notifications.svg"
-import arrow from "../../assets/svg/feed-arrow-down.svg"
-
-import AppInputField from "../../components/AppInputField"
-import AppButton from "../../components/AppButton";
 import { colors } from "../../themes/colors";
 import AppNavIcon from "../../components/AppNavIcon";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AppSearchField from "../../components/AppSearchField";
 import useNavbar from "../../hooks/useUserInfo";
-import useAuth from "../../hooks/useUserInfo";
 import { useRef } from "react";
 import AppNavProfileDorpdown from "../../components/AppNavProfileDropdown";
 import AppNavDrawer from "./work/WorkDrawer";
@@ -68,7 +62,7 @@ export default function LoggedInNavbar() {
                                                 color: isActive ? '#fff' : '#545e6f',
                                                 background: isActive ? '#7600dc' : '#f0f0f0',
                                             })}
-                                            exact to="/feed"
+                                            to="/feed"
                                         >
                                             <AppNavIcon index={index} onClick={() => { setSelected(true) }}
                                                 dropdown={data.dropdown} selected={selected} borderRadius={data.borderRadius} fontSize="0.75rem"
