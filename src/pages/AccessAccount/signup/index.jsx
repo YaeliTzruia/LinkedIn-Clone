@@ -1,6 +1,5 @@
 
 import { useMediaQuery } from "@chakra-ui/react";
-import { useState } from "react";
 import useFormikData from "../../../hooks/useFormik";
 import Desktop from "./desktop/index";
 import Phone from "./phone/index";
@@ -11,12 +10,12 @@ import Welcome from "./desktop/steps/Welcome";
 
 
 export default function Signup() {
-    const { currentStep, setCurrentStep, handleNextStep } = useFormikData()
+    const { currentStep, handleNextStep, signupData } = useFormikData()
     const [isSmallScreen] = useMediaQuery("(max-width: 900px)");
     const desktopIndex = [
-        <FirstStep setCurrentStep={setCurrentStep} handleNextStep={handleNextStep} />,
-        <SecondStep setCurrentStep={setCurrentStep} handleNextStep={handleNextStep} />,
-        <Welcome />]
+        <FirstStep data={signupData} handleNextStep={handleNextStep} />,
+        <SecondStep data={signupData} handleNextStep={handleNextStep} />,
+        <Welcome data={signupData} handleNextStep={handleNextStep} />]
 
     return (
         <>

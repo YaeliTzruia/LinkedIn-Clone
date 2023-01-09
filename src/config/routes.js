@@ -1,7 +1,9 @@
 import SignIn from "../pages/AccessAccount/SignIn";
 import Signup from "../pages/AccessAccount/signup";
+import Welcome from "../pages/AccessAccount/signup/desktop/steps/Welcome";
 import LandingPage from "../pages/landingpage/index";
 import Feed from "../pages/loggedIn/feed";
+import Profile from "../pages/loggedIn/profile";
 
 import PageNotFound from "../pages/PageNotFound";
 
@@ -34,6 +36,18 @@ const routes = [
     path: "/feed",
     component: <Feed />,
     lable: "Not-Found",
+    protected: true,
+  },
+  {
+    path: "/welcome",
+    component: <Welcome />,
+    lable: "one more step",
+    protected: false,
+  },
+  {
+    path: "/profile/",
+    component: <Profile />,
+    lable: "user profile",
     protected: true,
   },
 ];

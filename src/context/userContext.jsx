@@ -11,17 +11,13 @@ export default function UserProvider({ children }) {
     const [userInformation, setUserInformation] = useState({})
     const [profileImg, setProfileImg] = useState(profilePic)
     const [banner, setBanner] = useState(bannerImg)
-    const [userFullName, setUserFullName] = useState("sara")
+    const [header, setHeader] = useState("add a new header...")
     const [profession, setProfession] = useState("Software Developer")
     const [loading, setLoading] = useState(false)
     const [accessAccount, setAccessAcount] = useState(false)
     const navigate = useNavigate()
     const fullName = userInformation.firstName + " " + userInformation.lastName
 
-
-    // useEffect(()=>{
-    //     navigate("/feed")
-    // },[accessAccount])
 
     useEffect(() => {
 
@@ -36,7 +32,7 @@ export default function UserProvider({ children }) {
 
 
                 setAccessAcount(true);
-                navigate("/feed")
+                // navigate("/feed")
             }
             // else if (user.status !== 200) {
             //     navigate("/")
@@ -54,8 +50,8 @@ export default function UserProvider({ children }) {
         <userContext.Provider
             value={{
                 userInformation, accessAccount,
-                profileImg, banner,
-                userFullName, profession, setProfession, setUserFullName, setBanner, setProfileImg, loading, fullName
+                profileImg, banner, header,
+                profession, setProfession, setBanner, setProfileImg, setLoading, loading, fullName
             }}
         >
             {children}

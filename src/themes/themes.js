@@ -9,6 +9,7 @@ const activeLabelStyles = {
 const theme = extendTheme({
   styles: {
     global: {
+      direction: "ltr",
       "html, body": {
         color: colors.primaryText,
         lineHeight: "tall",
@@ -43,7 +44,6 @@ const theme = extendTheme({
     // heading: `'Lato', sans-serif`,
     // body: `'Lato', sans-serif`,
   },
-  direction: "rtl",
 
   // colors: {
   //   primary: "#4db5ff",

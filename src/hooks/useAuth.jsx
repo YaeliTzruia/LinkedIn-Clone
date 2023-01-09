@@ -1,16 +1,18 @@
 import axios from "axios";
-import { SignupSchema } from "../schema/SignupSchema";
-import useInputs from "./useInputs"
-import { useContext, useEffect, useState } from "react";
+
 import { authConfig } from "../config/auth.config";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { userContext } from "../context/userContext";
 
 export default function useAuth() {
-    // const { setLoading, setAccessAcount } = useContext(userContext)
     axios.defaults.withCredentials = true;
+    const { setLoading } = useContext(userContext)
     const navigate = useNavigate()
 
+    // useEffect(()=>{
+
+    // })
 
     const createUser = async (values) => {
         try {
@@ -35,8 +37,10 @@ export default function useAuth() {
 
     const signout = async () => {
         try {
+            setLoading(true)
             const logout = await authConfig.handleLogout()
-            navigate("/")
+            setLoading(false)
+            // navigate("/")
             return logout
         } catch (error) {
             console.error('failed signout', error)

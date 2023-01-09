@@ -64,7 +64,7 @@ export default function AppNavProfileDorpdown({ text }) {
                             <Text fontSize="0.875rem">{profession}</Text>
                         </Flex>
                     </Flex>
-                    <Button borderRadius="20" border={`1px solid ${colors.buttonSecondary}`} color={colors.buttonSecondary} bg="white" padding="0.125rem 0.75rem" marginTop="0.5rem" h="1.5rem" w="15.5rem">View Profile</Button>
+                    <Button onClick={() => navigate("/profile")} borderRadius="20" border={`1px solid ${colors.buttonSecondary}`} color={colors.buttonSecondary} bg="white" padding="0.125rem 0.75rem" marginTop="0.5rem" h="1.5rem" w="15.5rem">View Profile</Button>
                 </MenuItem>
                 <Flex padding="0.5rem" borderBottom={colors.borderBottom} alignItems="flex-start" flexDir="column">
                     <Text fontWeight={700} fontSize="1rem">Account</Text>

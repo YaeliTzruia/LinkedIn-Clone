@@ -5,17 +5,25 @@ import theme from "./themes/themes";
 import routes from "./config/routes";
 import { useContext } from "react";
 import UserProvider, { userContext } from "./context/userContext";
+import Welcome from "./pages/landingpage/Welcome";
 
 function App() {
-  const { accessAccount, loading } = useContext(userContext);
+  const { accessAccount, loading, userInformation } = useContext(userContext);
 
   console.log(accessAccount, "accessAccount", loading, "loading", "app");
+  console.log(userInformation, "user");
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">
         <Routes>
           <>
-            {loading ? null : accessAccount ? (
+            {!loading && accessAccount ? (
+              // userInformation.city === "" ? (
+              //   <>
+              //     <Route path="/" element=<Welcome /> />
+              //     {/* <Route path="*" element={<Navigate to="/welcome" />} /> */}
+              //   </>
+              // ) :
               <>
                 {routes
                   .filter((r) => r.protected)
@@ -26,7 +34,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                <Route path="*" element={<Navigate to="/feed" />} />
+                {/* <Route path="*" element={<Navigate to="/feed" />} /> */}
               </>
             ) : (
               <>
@@ -39,7 +47,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                <Route path="*" element={<Navigate to="/" />} />
+                {/* <Route path="*" element={<Navigate to="/" />} /> */}
               </>
             )}
           </>
