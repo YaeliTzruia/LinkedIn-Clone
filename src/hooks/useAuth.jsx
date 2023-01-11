@@ -28,8 +28,11 @@ export default function useAuth() {
 
     const signinUser = async (values) => {
         const res = await authConfig.handleLogin(values)
+        console.log(res, "res")
         if (res?.status !== 200) {
+
             return res?.response?.data?.msg
+
         } else {
             return res
         }
@@ -48,9 +51,9 @@ export default function useAuth() {
         }
     }
 
-    const updateUserInformation = async () => {
+    const updateUserInformation = async (values) => {
         try {
-            const update = await authConfig.updateUser()
+            const update = await authConfig.updateUser(values)
             return update
         } catch (error) {
             return error

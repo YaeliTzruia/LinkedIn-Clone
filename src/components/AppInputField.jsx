@@ -16,7 +16,7 @@ export default function AppInputField({ isLogin = false, variant, labelMarginTop
                             < Input _hover={{ borderColor: { border } }
                             } borderColor={border} autoComplete="off" placeholder=' ' {...props} type={show ? "text" : "password"} />
                             {isLogin && <FormLabel marginBottom="0.25rem" fontSize="0.875rem" color={labelColor}>{label}</FormLabel>}
-                            <InputLeftElement paddingRight={["0.625rem", "2.5rem", "0.625rem", "0.625rem"]} width={buttonW}>
+                            <InputRightElement paddingRight={["0.625rem", "2.5rem", "0.625rem", "0.625rem"]} width={buttonW}>
                                 {btnBox ?
                                     <Button backgroundColor="transparent" borderRadius={borderRadius} display="flex" align="center" textDecor="none" marginTop={btnMargin} fontWeight={700} h={btnHight} marginRight="1rem" paddingY="0.5rem" paddingX={["1.7rem", "0.5rem", "1.7rem", "1.7rem"]} color={colors.buttonSecondary} zIndex={2} size='sm' onClick={setShow}>
                                         {show ? 'hide' : 'show'}
@@ -30,7 +30,7 @@ export default function AppInputField({ isLogin = false, variant, labelMarginTop
                                 }
 
 
-                            </InputLeftElement>
+                            </InputRightElement>
                         </Flex >
                         :
                         <Flex w="100%" justifyContent="center" align="center">

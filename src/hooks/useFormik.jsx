@@ -6,6 +6,8 @@ import { SetupSchema } from "../schema/SetupSchema"
 import { SigninSchema } from "../schema/SigninSchema"
 import { useNavigate } from "react-router-dom"
 import { userContext } from "../context/userContext"
+import bannerImg from "../assets/linkedin-banner.jpeg"
+import defaultUserImg from "../assets/default user img.png"
 
 export default function useFormikData() {
     const { setLoading } = useContext(userContext)
@@ -16,9 +18,31 @@ export default function useFormikData() {
         email: '',
         password: '',
         firstName: '',
+        middleName: '',
         lastName: '',
+        birthday: '',
         country: '',
-        city: ''
+        city: '',
+        address: '',
+        headline: 'Add a new headline...',
+        profileImg: defaultUserImg,
+        headerImg: bannerImg,
+        profession: '',
+        industry: 'Add a new industry...',
+        education: 'Add a new education...',
+        userSummary: '',
+        phone: '',
+        phoneType: '',
+        website: {
+            websiteURL: '',
+            websiteType: ''
+        },
+        link: '',
+        linkText: '',
+        posts: [
+            {}
+        ]
+
     })
 
     const navigate = useNavigate()
@@ -51,10 +75,11 @@ export default function useFormikData() {
         validationSchema: SigninSchema,
 
         onSubmit: async (values) => {
-            signinUser(values)
+            console.log(values)
+            await signinUser(values)
         }
     })
 
 
-    return { signupData, handleNextStep, currentStep }
+    return { signupData, handleNextStep, currentStep, signinFormik }
 }

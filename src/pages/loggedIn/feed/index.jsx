@@ -10,7 +10,7 @@ export default function Feed() {
 
     return (
         <Flex flexDir="column" h="60rem" w="100%" backgroundColor={colors.background}>
-            <Flex zIndex={4} position="fixed">
+            <Flex w="100%" zIndex={4} position="fixed">
                 <LoggedInNavbar />
             </Flex>
             <Flex justifyContent="center" paddingTop="4.5rem">

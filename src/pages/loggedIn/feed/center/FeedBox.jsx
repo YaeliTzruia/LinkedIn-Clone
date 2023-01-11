@@ -10,7 +10,7 @@ import { userContext } from "../../../../context/userContext"
 
 export default function FeedBox() {
 
-    const { userInformation, profession, profileImg, fullName } = useContext(userContext)
+    const { profileImg, profession, fullName } = useContext(userContext)
 
     const post = `Don't let anything stand in the way of the light that shines through this form, risk being seen in all of your glory.Our eyes are not viewers, they are also projectors that are running a second story over the picture that we see in front of us all the time, fear is writing that script and the working title is "I'll never be enough". You spend your whole life imagining ghosts, worrying about the pathway to the future, but all that will ever be is what's happening here, in the decisions we make in this moment, which is based in either love or fear. So many of us choose our path out of fear disguised as practicality. What we really want seems impossibly out of reach and ridiculous to expect so we never dare to ask the universe for it - I'm saying, I'm the proof, that you can ask the universe for it. `
 

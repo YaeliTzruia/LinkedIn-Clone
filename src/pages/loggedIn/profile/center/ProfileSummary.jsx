@@ -9,7 +9,7 @@ import EditInfoModal from "../modal/user-information/EditInfoModal";
 
 
 export default function ProfileSummary({ isOpen, onOpen, onClose }) {
-    const { userInformation, header, profileImg, banner, profession, fullName } = useContext(userContext)
+    const { userInformation, header, profileImg, banner, profession, fullName, getUserDetails } = useContext(userContext)
 
     const [editData, setEditData] = useState({})
 
@@ -39,7 +39,7 @@ export default function ProfileSummary({ isOpen, onOpen, onClose }) {
                     <AppButton maxH="2rem" maxW="4.418rem" _hover={{ bgColor: colors.bgHover, border: `2px solid ${colors.mediumGray}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" border={`1px solid ${colors.mediumGray}`} bgColor="white" color={colors.mediumGray} text="More" />
                 </Flex>
             </Flex>
-            <EditInfoModal userInformation={userInformation} isOpen={isOpen} onClose={onClose} />
+            <EditInfoModal getUserDetails={getUserDetails} userInformation={userInformation} isOpen={isOpen} onClose={onClose} />
         </Flex >
     )
 }

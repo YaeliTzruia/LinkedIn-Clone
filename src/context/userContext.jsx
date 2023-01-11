@@ -9,50 +9,42 @@ export const userContext = createContext({})
 
 export default function UserProvider({ children }) {
     const [userInformation, setUserInformation] = useState({})
-    const [profileImg, setProfileImg] = useState(profilePic)
-    const [banner, setBanner] = useState(bannerImg)
-    const [header, setHeader] = useState("add a new header...")
-    const [profession, setProfession] = useState("Software Developer")
     const [loading, setLoading] = useState(false)
     const [accessAccount, setAccessAcount] = useState(false)
-    const navigate = useNavigate()
-    const fullName = userInformation.firstName + " " + userInformation.lastName
 
-    console.log(userInformation, "context userInformation")
+    const { profileImg, profession, header } = userInformation
+    const fullName = userInformation.firstName + " " + userInformation.middleName + " " + userInformation.lastName
 
+    const banner = userInformation.headerImg
+
+    const getUserDetails = async () => {
+        const user = await authConfig.getUser();
+        if (user.status === 200) {
+
+            setUserInformation(user.data.signedInUser
+            );
+
+
+            setAccessAcount(true);
+
+        }
+
+    };
     useEffect(() => {
 
         setLoading(true);
 
-        const getUserDetails = async () => {
-            const user = await authConfig.getUser();
-            if (user.status === 200) {
-
-                setUserInformation(user.data.signedInUser
-                );
-
-
-                setAccessAcount(true);
-                // navigate("/feed")
-            }
-            // else if (user.status !== 200) {
-            //     navigate("/")
-            //     setAccessAcount(false);
-            // }
-            // console.log(user, "user deatials");
-        };
-
-
 
         getUserDetails();
         setLoading(false);
-    }, [accessAccount]);
+    }, [accessAccount, loading]);
     return (
         <userContext.Provider
             value={{
+                getUserDetails,
                 userInformation, accessAccount,
                 profileImg, banner, header,
-                profession, setProfession, setBanner, setProfileImg, setLoading, loading, fullName
+                profession, setLoading, loading, fullName
             }}
         >
             {children}

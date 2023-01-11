@@ -34,7 +34,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                {/* <Route path="*" element={<Navigate to="/feed" />} /> */}
+                <Route path="*" element={<Navigate to="/feed" />} />
               </>
             ) : (
               <>
@@ -47,7 +47,7 @@ function App() {
                       element={route.component}
                     />
                   ))}
-                {/* <Route path="*" element={<Navigate to="/" />} /> */}
+                <Route path="*" element={<Navigate to="/" />} />
               </>
             )}
           </>

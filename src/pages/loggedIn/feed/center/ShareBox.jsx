@@ -5,9 +5,11 @@ import photo from "../../../../assets/svg/photo-post.svg"
 import video from "../../../../assets/svg/video-add.svg"
 import audio from "../../../../assets/svg/audio-add.svg"
 import article from "../../../../assets/svg/article-add.svg"
+import { userContext } from "../../../../context/userContext";
+import { useContext } from "react";
 
 export default function ShareBox() {
-    const { profileImg } = useAuth()
+    const { profileImg } = useContext(userContext)
     const postOptions = [
         { icon: photo, name: "Photo" },
         { icon: video, name: "Video" },
