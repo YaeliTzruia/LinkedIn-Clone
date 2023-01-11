@@ -1,7 +1,7 @@
 import { Button, Flex, IconButton, Image } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function AppButton({ icons = false, image = false, right = false, left = false, paddingY = "0.78rem", paddingX = "1.5rem", borderRadius = "28px", src, icon, text, imgLeftMarginRight = "1rem", ...oterProps }) {
+export default function AppButton({ iconHeight = "1.5rem", iconWidth = "1.5rem", icons = false, image = false, right = false, left = false, paddingY = "0.78rem", paddingX = "1.5rem", borderRadius = "28px", src, icon, text, imgLeftMarginRight = "1rem", ...oterProps }) {
     // const [selected, setSelected] = useState(false)
 
     if (image && left) {
@@ -14,7 +14,7 @@ export default function AppButton({ icons = false, image = false, right = false,
     if (image && right) {
         return (
             <Flex w="100%" justifyContent="space-between" >
-                <Button borderRadius={borderRadius} paddingY="0.78rem" paddingX="1.5rem" w="100%" {...oterProps} rightIcon={<Image position="relative" w="1.5rem" h="1.5rem" src={src} />}>{text}</Button>
+                <Button borderRadius={borderRadius} paddingY="0.78rem" paddingX="1.5rem" w="100%" {...oterProps} rightIcon={<Image position="relative" w={iconWidth} h={iconHeight} src={src} />}>{text}</Button>
             </Flex>
         )
     }

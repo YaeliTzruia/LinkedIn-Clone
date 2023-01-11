@@ -1,14 +1,18 @@
 import { Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { userContext } from "../../../../context/userContext";
 import { colors } from "../../../../themes/colors";
 import edit from "../../../../assets/svg/profile/edit-pen.svg"
 import editblue from "../../../../assets/svg/profile/edit-pen-blue.svg"
 import AppButton from "../../../../components/AppButton";
+import EditInfoModal from "../modal/user-information/EditInfoModal";
 
 
-export default function ProfileSummary() {
+export default function ProfileSummary({ isOpen, onOpen, onClose }) {
     const { userInformation, header, profileImg, banner, profession, fullName } = useContext(userContext)
+
+    const [editData, setEditData] = useState({})
+
 
     return (
 
@@ -22,7 +26,7 @@ export default function ProfileSummary() {
                 </Flex>
                 <Image marginLeft="2rem" marginTop="6rem" position="absolute" borderRadius="50%" border="2px solid white" w="9.5rem" h="9.5rem" src={profileImg} />
             </Flex>
-            <Flex cursor="pointer" align="end" h="3.25rem" paddingX="1rem" justifyContent="end">
+            <Flex onClick={onOpen} cursor="pointer" align="end" h="3.25rem" paddingX="1rem" justifyContent="end">
                 <Image borderRadius="50%" padding="0.5rem" _hover={{ bgColor: colors.bgHover }} minW="1.5rem" minH="1.5rem" src={edit} />
             </Flex>
             <Flex flexDir="column" marginTop="1rem" paddingX="1.5rem">
@@ -35,6 +39,7 @@ export default function ProfileSummary() {
                     <AppButton maxH="2rem" maxW="4.418rem" _hover={{ bgColor: colors.bgHover, border: `2px solid ${colors.mediumGray}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" border={`1px solid ${colors.mediumGray}`} bgColor="white" color={colors.mediumGray} text="More" />
                 </Flex>
             </Flex>
+            <EditInfoModal userInformation={userInformation} isOpen={isOpen} onClose={onClose} />
         </Flex >
     )
 }

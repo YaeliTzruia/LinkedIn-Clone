@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text, useDisclosure } from "@chakra-ui/react";
 import { useContext } from "react";
 import { userContext } from "../../../../context/userContext";
 import { colors } from "../../../../themes/colors";
@@ -7,15 +7,20 @@ import editblue from "../../../../assets/svg/profile/edit-pen-blue.svg"
 import AppButton from "../../../../components/AppButton";
 import ProfileSummary from "./ProfileSummary";
 import Analytics from "./Analytics";
+import Resources from "./Resources";
+import Featured from "./Featured";
 
 export default function ProfileCenter() {
 
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
 
-        <Flex gap="0.5rem" flexDir="column">
-            <ProfileSummary />
+        <Flex h="400rem" gap="0.5rem" flexDir="column">
+            <ProfileSummary isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
             <Analytics />
+            <Resources />
+            <Featured />
         </Flex>
     )
 }

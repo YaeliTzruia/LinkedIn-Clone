@@ -18,6 +18,7 @@ export default function UserProvider({ children }) {
     const navigate = useNavigate()
     const fullName = userInformation.firstName + " " + userInformation.lastName
 
+    console.log(userInformation, "context userInformation")
 
     useEffect(() => {
 

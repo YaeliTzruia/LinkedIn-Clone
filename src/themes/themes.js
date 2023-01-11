@@ -17,21 +17,25 @@ const theme = extendTheme({
         padding: "0px",
         // backgroundColor: colors.background,
       },
-      h1: {
-        // you can also use responsive styles
-        fontSize: "56px",
-        fontWeight: "bold",
-      },
-      h2: {
-        fontSize: ["36px", "48px"],
-        fontWeight: "semibold",
-        lineHeight: "110%",
-        letterSpacing: "-1%",
-      },
-      h5: {
-        fontWeight: "500",
-        color: colors.light,
-      },
+      // h1: {
+      //   // you can also use responsive styles
+      //   fontSize: "56px",
+      //   fontWeight: "bold",
+      // },
+      // h2: {
+      //   fontSize: ["36px", "48px"],
+      //   fontWeight: "semibold",
+      //   lineHeight: "110%",
+      //   letterSpacing: "-1%",
+      // },
+      // h3: {
+      //   fontSize: "20px",
+      //   fontWeight: "semibold",
+      // },
+      // h5: {
+      //   fontWeight: "500",
+      //   color: colors.light,
+      // },
       // section: { marginTop: "8rem" },
     },
     //   a: {
