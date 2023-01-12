@@ -12,7 +12,7 @@ export default function UserProvider({ children }) {
     const [loading, setLoading] = useState(false)
     const [accessAccount, setAccessAcount] = useState(false)
 
-    const { profileImg, profession, header } = userInformation
+    const { profileImg, profession, headline, link, linkText } = userInformation
     const fullName = userInformation.firstName + " " + userInformation.middleName + " " + userInformation.lastName
 
     const banner = userInformation.headerImg
@@ -41,9 +41,9 @@ export default function UserProvider({ children }) {
     return (
         <userContext.Provider
             value={{
-                getUserDetails,
+                getUserDetails, link, linkText,
                 userInformation, accessAccount,
-                profileImg, banner, header,
+                profileImg, banner, headline,
                 profession, setLoading, loading, fullName
             }}
         >

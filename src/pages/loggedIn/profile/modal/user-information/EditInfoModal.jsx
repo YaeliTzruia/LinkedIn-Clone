@@ -6,15 +6,13 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    Button,
     Text,
     Divider,
     Flex,
 } from '@chakra-ui/react'
-import { Fragment, useContext, useEffect, useState } from "react"
+import { Fragment } from "react"
 import { Formik } from "formik"
-import userContext from "../../../../../context/userContext"
-import { authConfig } from "../../../../../config/auth.config"
+
 import AppButton from '../../../../../components/AppButton'
 import { EditUserSchema } from "../../../../../schema/EditUserSchema"
 import { colors } from '../../../../../themes/colors'
@@ -23,13 +21,17 @@ import useAuth from "../../../../../hooks/useAuth"
 import EditUserForm from './EditUserForm'
 
 export default function EditInfoModal({ getUserDetails, userInformation, isOpen, onClose }) {
+
+
+
     const { updateUserInformation } = useAuth()
+
     console.log(userInformation, "userInformation", "usermodal")
 
 
     const handleSubmit = async (values) => {
-        const res = await updateUserInformation(values)
-
+        await updateUserInformation(values)
+        console.log(values)
         await getUserDetails()
         onClose()
 
@@ -66,7 +68,7 @@ export default function EditInfoModal({ getUserDetails, userInformation, isOpen,
 
                                         <Divider color={colors.border} w="100%" />
                                         <ModalFooter>
-                                            <AppButton onClick={handleSubmit} type="button" maxH="2rem" maxW="5.75rem" _hover={{ bgColor: colors.buttonPrimary, border: `2px solid ${colors.buttonPrimary}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" color="white" border={`1px solid ${colors.buttonSecondary}`} bgColor={colors.buttonSecondary} text="Save" />
+                                            <AppButton onClick={() => handleSubmit(values.values)} type="button" maxH="2rem" maxW="5.75rem" _hover={{ bgColor: colors.buttonPrimary, border: `2px solid ${colors.buttonPrimary}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" color="white" border={`1px solid ${colors.buttonSecondary}`} bgColor={colors.buttonSecondary} text="Save" />
 
                                         </ModalFooter>
 

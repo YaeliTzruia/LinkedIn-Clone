@@ -57,3 +57,8 @@ a .active {
   width: 600px;
   height: 300px;
 }
+.link,
+.link:link,
+.link:visited {
+  color: #0a66c2;
+}

@@ -135,7 +135,7 @@ export default function EditUserForm({ values }) {
             </Flex>
             <Flex paddingX="0.15rem" justifyContent="space-between" fontSize="0.875rem" align="center"><Text>Customize how your link will appear (optional).</Text> <Text>0/30</Text></Flex>
 
-            <AppButton type="submit" maxH="2rem" maxW="5.75rem" _hover={{ bgColor: colors.buttonPrimary, border: `2px solid ${colors.buttonPrimary}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" color="white" border={`1px solid ${colors.buttonSecondary}`} bgColor={colors.buttonSecondary} text="Save" />
+            {/* <AppButton type="submit" maxH="2rem" maxW="5.75rem" _hover={{ bgColor: colors.buttonPrimary, border: `2px solid ${colors.buttonPrimary}` }} paddingY="0.375rem" paddingX="1rem" fontWeight={600} fontSize="1rem" color="white" border={`1px solid ${colors.buttonSecondary}`} bgColor={colors.buttonSecondary} text="Save" /> */}
         </Form>
 
     )

@@ -11,12 +11,13 @@ const theme = extendTheme({
     global: {
       direction: "ltr",
       "html, body": {
-        color: colors.primaryText,
+        // color: colors.primaryText,
         lineHeight: "tall",
         margin: "0px",
         padding: "0px",
         // backgroundColor: colors.background,
       },
+
       // h1: {
       //   // you can also use responsive styles
       //   fontSize: "56px",
