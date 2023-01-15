@@ -59,8 +59,18 @@ export default function useAuth() {
             return error
         }
     }
+    const updateImage = async (values) => {
+        try {
+            const imgUpdate = await authConfig.updateImage(values)
+            console.log(imgUpdate, "imgUpdate")
+            return imgUpdate
+        } catch (error) {
+            console.log(error, "error")
+            return error
+        }
+    }
 
     return {
-        createUser, signout, signinUser, updateUserInformation,
+        createUser, signout, signinUser, updateUserInformation, updateImage
     }
 }

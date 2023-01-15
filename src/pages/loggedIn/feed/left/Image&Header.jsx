@@ -6,8 +6,8 @@ export default function ImageNdHeader({ profession, userFullName, profileImg, ba
 
         <Flex h="11.514rem" borderBottom={colors.borderBottom} paddingBottom="1rem" flexDir="column">
             <Flex align="center" justifyContent="center" w="100%" flexDir="column">
-                <Image borderTopRadius="0.3rem" h="3.516rem" w="100%" position="relative" alt="header image" src={banner} />
-                <Image marginTop="3.5rem" position="absolute" border="2px solid white" borderRadius="50%" w="4.5rem" h="4.5rem" alt="profile picture" src={profileImg} />
+                <Image objectFit="cover" borderTopRadius="0.3rem" h="3.516rem" w="100%" position="relative" alt="header image" src={banner} />
+                <Image objectFit="cover" marginTop="3.5rem" position="absolute" border="2px solid white" borderRadius="50%" w="4.5rem" h="4.5rem" alt="profile picture" src={profileImg} />
             </Flex>
             <Flex textAlign="center" justifyContent="center">
                 <Flex gap={1} flexDir="column" marginTop="3.5rem"  >

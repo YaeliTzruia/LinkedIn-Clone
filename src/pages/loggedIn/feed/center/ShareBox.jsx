@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Button, Flex, Image, Text, useDisclosure } from "@chakra-ui/react";
 import { colors } from "../../../../themes/colors"
 import useAuth from "../../../../hooks/useUserInfo"
 import photo from "../../../../assets/svg/photo-post.svg"
@@ -7,9 +7,11 @@ import audio from "../../../../assets/svg/audio-add.svg"
 import article from "../../../../assets/svg/article-add.svg"
 import { userContext } from "../../../../context/userContext";
 import { useContext } from "react";
+import NewPostModal from "./NewPostModal";
 
 export default function ShareBox() {
-    const { profileImg } = useContext(userContext)
+    const { getUserDetails, userInformation, fullName, profileImg } = useContext(userContext)
+    const { isOpen, onOpen, onClose } = useDisclosure()
     const postOptions = [
         { icon: photo, name: "Photo" },
         { icon: video, name: "Video" },
@@ -22,8 +24,8 @@ export default function ShareBox() {
 
             <Flex flexDir="column">
                 <Flex align="center" margin="0.5rem 1rem 0">
-                    <Image marginRight="0.5rem" borderRadius="50" h="3rem" w="3rem" src={profileImg} />
-                    <Button marginY="0.25rem" padding="0.625rem 0.5rem 0.625rem 1rem" color={colors.linkText} justifyContent="flex-start" border="0.5px solid rgba(0, 0, 0, 0.3)" borderRadius={50} variant="ghost" textAlign="start" h="3rem" w="28.25rem">Start a post</Button>
+                    <Image objectFit="cover" marginRight="0.5rem" borderRadius="50" h="3rem" w="3rem" src={profileImg} />
+                    <Button onClick={onOpen} marginY="0.25rem" padding="0.625rem 0.5rem 0.625rem 1rem" color={colors.linkText} justifyContent="flex-start" border="0.5px solid rgba(0, 0, 0, 0.3)" borderRadius={50} variant="ghost" textAlign="start" h="3rem" w="28.25rem">Start a post</Button>
                 </Flex>
                 <Flex justifyContent="space-evenly" w="33.75rem">
                     {postOptions.map((data) =>
@@ -34,6 +36,7 @@ export default function ShareBox() {
                     )}
                 </Flex>
             </Flex>
+            <NewPostModal fullName={fullName} getUserDetails={getUserDetails} userInformation={userInformation} isOpen={isOpen} onClose={onClose} />
         </Flex>
     )
 }

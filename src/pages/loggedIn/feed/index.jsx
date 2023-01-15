@@ -9,7 +9,7 @@ import Right from "./right/index";
 export default function Feed() {
 
     return (
-        <Flex flexDir="column" h="60rem" w="100%" backgroundColor={colors.background}>
+        <Flex flexDir="column" minH="70rem" w="100%" backgroundColor={colors.background}>
             <Flex w="100%" zIndex={4} position="fixed">
                 <LoggedInNavbar />
             </Flex>

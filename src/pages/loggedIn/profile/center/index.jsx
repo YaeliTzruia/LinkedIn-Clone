@@ -12,12 +12,12 @@ import Featured from "./Featured";
 
 export default function ProfileCenter() {
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
+
 
     return (
 
         <Flex h="400rem" gap="0.5rem" flexDir="column">
-            <ProfileSummary isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+            <ProfileSummary />
             <Analytics />
             <Resources />
             <Featured />

@@ -17,7 +17,7 @@ export default function SecondBox() {
         } borderRadius="0.5rem" backgroundColor={colors.white} w="20.125rem" h="15.625rem" >
             <Flex w="95%" justifyContent="end">
 
-                <AppTextIcon fontWeight={400} padding="0" textColor={colors.blackE6} marginLeft="0.5rem" justifyContent="space-between" src={dots} text="Ad" reverse />
+                <AppTextIcon cursor="pointer" fontWeight={400} padding="0" textColor={colors.blackE6} marginLeft="0.5rem" justifyContent="space-between" src={dots} text="Ad" reverse />
 
             </Flex>
             <Flex textAlign="center" w="80%">

@@ -13,10 +13,19 @@ export default function CenterPart() {
                 <ShareBox />
             </Flex>
             <Flex marginY="1rem" borderBottom={`2px solid rgba(0,0,0,0.08)`} />
+            <Flex marginBottom="5rem" gap={2.5} flexDir="column">
 
-            <Flex borderRadius="0.3rem" backgroundColor="white" w="33.75rem">
+                <Flex flexDir="column" borderRadius="0.3rem" backgroundColor="white" w="33.75rem">
 
-                <FeedBox />
+                    <FeedBox />
+
+                </Flex>
+                <Flex flexDir="column" borderRadius="0.3rem" backgroundColor="white" w="33.75rem">
+
+                    <FeedBox />
+
+                </Flex>
+
             </Flex>
 
         </Flex>

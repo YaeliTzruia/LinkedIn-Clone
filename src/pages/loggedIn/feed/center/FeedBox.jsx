@@ -21,7 +21,7 @@ export default function FeedBox() {
 
             <Flex paddingX="1rem" marginBottom="0.5rem" paddingTop="0.75rem" w="100%" justifyContent="space-between">
                 <Flex >
-                    <Image marginRight="0.5rem" w="3rem" h="3rem" borderRadius={50} src={profileImg} />
+                    <Image objectFit="cover" marginRight="0.5rem" w="3rem" h="3rem" borderRadius={50} src={profileImg} />
                     <Flex color={colors.mediumGray} lineHeight={1.3} flexDir="column">
                         <Text color={colors.blackE6} fontSize="0.875rem" fontWeight={700}>{fullName}</Text>
                         <Text fontSize="0.75rem">{profession}</Text>

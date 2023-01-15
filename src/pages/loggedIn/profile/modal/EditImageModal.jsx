@@ -16,7 +16,6 @@ import {
 import { Fragment, useState } from "react"
 import { Formik } from "formik"
 import save from "../../../../assets/save.png"
-import { colors } from '../../../../themes/colors'
 import { EditUserSchema } from "../../../../schema/EditUserSchema"
 import frame from "../../../../assets/svg/profile/frames-white.svg"
 import camera from "../../../../assets/svg/profile/camera-white.svg"
@@ -24,39 +23,46 @@ import bin from "../../../../assets/svg/profile/bin-white.svg"
 import edit from "../../../../assets/svg/profile/edit-pen-white.svg"
 import useAuth from '../../../../hooks/useAuth'
 
-// import useAuth from "../../../../../hooks/useAuth"
 
 
 
+export default function EditImageModal({ getUserDetails, profileImg, banner, userInformation, imageEditing, isOpen, onClose }) {
 
-
-
-export default function EditProfileImageModal({ getUserDetails, userInformation, profileImg, isOpen, onClose }) {
-
-    const { updateUserInformation } = useAuth()
+    const { updateUserInformation, updateImage } = useAuth()
     const [image, setImage] = useState()
 
+    const imagedata = imageEditing.data
+    const imageText = imageEditing.name
+
+    console.log(imageEditing)
     const buttons = [
-        // { src: edit, text: "Edit"  },
         { src: camera, text: "Add photo" },
         { src: frame, text: "Frames" }
     ]
 
     const handleSubmit = async (values) => {
-        await updateUserInformation(values)
-        console.log(values, "values in image")
-        // await getUserDetails()
-        // onClose()
-        console.log(userInformation.profileImg, "user image")
-        // setImage('')
+        console.log(image, "imageeeeeee")
+        if (imageText === "banner") {
+            const formData = new FormData();
+            formData.append("image", image);
+            const resp = await updateImage(formData)
+            await updateUserInformation({ ...values, headerImg: resp.data })
+            await getUserDetails()
+            onClose()
+            setImage()
+        } else {
+            const formData = new FormData();
+            formData.append("image", image);
+            const resp = await updateImage(formData)
+            await updateUserInformation({ ...values, profileImg: resp.data })
+            await getUserDetails()
+            onClose()
+            setImage()
+        }
 
 
     };
 
-
-
-
-    // const { updateUserInformation } = useAuth()
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
@@ -72,12 +78,17 @@ export default function EditProfileImageModal({ getUserDetails, userInformation,
                         {(values) => {
                             return (
                                 <>
-                                    {/* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */}
                                     <ModalBody >
                                         <Flex align="center" justifyContent="center">
-                                            <Image objectFit="cover" borderRadius="50%" w="17.5rem" h="17.5rem" src={image ? URL.createObjectURL(image) : profileImg} />
+                                            {imageText === "banner" ?
+                                                (
+                                                    <Image padding="0" objectFit="cover" w="100%" h="17.5rem" src={image ? URL.createObjectURL(image) : imagedata} />
+                                                )
+                                                :
+                                                (
+                                                    <Image objectFit="cover" borderRadius="50%" w="17.5rem" h="17.5rem" src={image ? URL.createObjectURL(image) : imagedata} />
+                                                )}
+
                                         </Flex>
                                     </ModalBody>
                                     <Divider opacity="0.2" color="#8080801f" w="100%" />
@@ -88,13 +99,11 @@ export default function EditProfileImageModal({ getUserDetails, userInformation,
 
                                                 <Flex paddingX="0.5rem" borderRadius="2.5" h="4.8rem" cursor="pointer" _hover={{ bgColor: "#8080807a" }} justifyContent="center" align="center" flexDir="column">
                                                     <Image onClick={() => document.getElementById("newUserImage").click()} h="1.5rem" w="1.5rem" alt="edit" src={edit} />
-                                                    <Input style={{ display: "none" }}
+                                                    <Input accept='image/*' style={{ display: "none" }}
+
                                                         onChange={(e) => {
-                                                            setImage(window.URL.createObjectURL(e.target.files[0]))
-                                                            values.setFieldValue("profileImg", image)
-                                                            // reader.onloadend = () => {
-                                                            //     values.setFieldValue("profileImg", reader.result)
-                                                            // };
+                                                            console.log(e.target.files[0])
+                                                            setImage(e.target.files[0])
                                                         }
                                                         }
                                                         type="file" id="newUserImage" />
@@ -108,13 +117,11 @@ export default function EditProfileImageModal({ getUserDetails, userInformation,
                                                 ))}
 
                                             </Flex>
-
-
                                             <Flex gap={2}>
 
                                                 {image &&
-                                                    <>    <Button onClick={() => handleSubmit(values.values)} style={{ display: "none" }} id="saveProfileImg" />
-                                                        <Flex onClick={() => document.getElementById("saveProfileImg").click()} paddingX="0.5rem" borderRadius="2.5" h="4.8rem" cursor="pointer" _hover={{ bgColor: "#8080807a" }} justifyContent="center" align="center" flexDir="column">
+                                                    <>    <Button onClick={() => handleSubmit(values.values)} style={{ display: "none" }} id="saveImg" />
+                                                        <Flex onClick={() => document.getElementById("saveImg").click()} paddingX="0.5rem" borderRadius="2.5" h="4.8rem" cursor="pointer" _hover={{ bgColor: "#8080807a" }} justifyContent="center" align="center" flexDir="column">
 
                                                             <Image borderRadius="50%" h="1.5rem" w="1.5rem" alt="delete" src={save} />
                                                             <Text fontSize="1rem">Save</Text>

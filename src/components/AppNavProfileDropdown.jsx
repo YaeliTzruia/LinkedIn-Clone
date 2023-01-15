@@ -38,9 +38,12 @@ export default function AppNavProfileDorpdown({ text }) {
             <MenuButton >
                 <Image
                     w="1.5rem"
+                    h="1.5rem"
+                    objectFit="cover"
                     borderRadius='full'
                     src={profileImg}
                     alt='Profile image'
+
 
                 />
                 <Flex textAlign="center" justifyContent="center" align="center">

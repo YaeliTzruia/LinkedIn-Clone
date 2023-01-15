@@ -47,4 +47,9 @@ export const authConfig = {
     console.log(edit);
     return edit.data;
   },
+
+  updateImage: async (image) => {
+    const editImg = await axios.post("http://localhost:5001/uploads", image);
+    return editImg;
+  },
 };

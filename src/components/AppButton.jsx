@@ -14,7 +14,7 @@ export default function AppButton({ iconHeight = "1.5rem", imgHeight = '1.5rem',
     if (image && right) {
         return (
             <Flex w="100%" justifyContent="space-between" >
-                <Button borderRadius={borderRadius} paddingY="0.78rem" paddingX="1.5rem" w="100%" {...oterProps} rightIcon={<Image position="relative" w={iconWidth} h={iconHeight} src={src} />}>{text}</Button>
+                <Button borderRadius={borderRadius} paddingY={paddingY} paddingX={paddingX} w="100%" {...oterProps} rightIcon={<Image position="relative" w={iconWidth} h={iconHeight} src={src} />}>{text}</Button>
             </Flex>
         )
     }

@@ -7,7 +7,7 @@ import edit from "../../../../assets/svg/profile/edit-pen.svg"
 import AppButton from "../../../../components/AppButton";
 import EditInfoModal from "../modal/user-information/EditInfoModal";
 
-import EditProfileImageModal from "../modal/EditProfileImageModal";
+import EditProfileImageModal from "../modal/EditImageModal";
 import ProfileImages from "./ProfileImages";
 import ProfileSummaryText from "./ProfileSummaryText";
 
