@@ -13,7 +13,7 @@ export default function Feed() {
             <Flex w="100%" zIndex={4} position="fixed">
                 <LoggedInNavbar />
             </Flex>
-            <Flex justifyContent="center" paddingTop="4.5rem">
+            <Flex justifyContent="center" paddingTop={["4.5rem", "4.5rem", "4.5rem", "4.5rem"]}>
                 <Flex justifyContent="space-between" w={["20.5remrem", "25.875rem", "70.5rem", "70.5rem"]} >
                     <Left />
                     <CenterPart />

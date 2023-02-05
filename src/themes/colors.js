@@ -18,4 +18,6 @@ export const colors = {
   boxShadow: "rgba(0, 0, 0, 0.08)",
   bgHover: "rgba(0,0,0,0.08)",
   errorRed: "#D11124",
+  disableBg: "rgba(0,0,0,0.08)",
+  disableText: "rgba(0,0,0, 0.3)",
 };

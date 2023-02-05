@@ -41,7 +41,7 @@ export default function LoggedInNavbar() {
 
     ]
     return (
-        <Flex zIndex={2} justifyContent="center" w="100%" backgroundColor={colors.white} h={["4,5rem", "4,5rem", "5rem", "3.3em"]}>
+        <Flex zIndex={2} justifyContent="center" w="100%" backgroundColor={colors.white} h={["4,5rem", "4,5rem", "3.313rem", "3.3em"]}>
             <Flex justifyContent="space-between" marginX="24.8rem" paddingBottom={["0.75rem", "0.75rem", "1rem", "1rem"]} paddingTop="0.95rem"
                 // marginX={["1rem", "1rem", "4.75rem", "24.75rem"]} 
                 h={["4,5rem", "4,5rem", "3.25rem", "3.25rem"]} w="100%">
@@ -68,7 +68,6 @@ export default function LoggedInNavbar() {
                                                 dropdown={data.dropdown} selected={selected} borderRadius={data.borderRadius} fontSize="0.75rem"
 
                                                 iconH={data.h} iconW={data.w}
-                                                // iconH="1.35rem" iconW="1.4rem"
                                                 text={data.text} icon={data.icon} />
                                         </NavLink>
                                     </Box>
