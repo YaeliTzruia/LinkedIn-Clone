@@ -52,4 +52,28 @@ export const authConfig = {
     const editImg = await axios.post("http://localhost:5001/uploads", image);
     return editImg;
   },
+  getPostsById: async (id) => {
+    try {
+      // console.log(id, "id");
+      const posts = await axios.get(`http://localhost:5001/posts/${id}`);
+      // console.log(`http://localhost:5001/posts/${id}`, "id params");
+      // console.log(posts.data.post, "posts");
+      // const AllUserPosts = posts.data.post;
+      return posts;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  },
+  // getPosts:async (id)=>{
+  //   try {
+  //     const details = {fullName, userImage, _Id} = user
+  //     const posts = await axios.post("http://localhost:5001/posts/:userId", details);
+  //     // console.log(user, "user");
+  //     return user;
+  //   } catch (error) {
+  //     console.log(error);
+  //     return error;
+  //   }
+  // }
 };

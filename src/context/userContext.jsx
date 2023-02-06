@@ -36,7 +36,10 @@ export default function UserProvider({ children }) {
 
 
         getUserDetails();
-        setLoading(false);
+        if (accessAccount == true) {
+            setLoading(false);
+        }
+
     }, [accessAccount, loading]);
     return (
         <userContext.Provider

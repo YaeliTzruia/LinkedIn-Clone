@@ -28,6 +28,8 @@ import { colors } from '../../../../themes/colors'
 import useAuth from '../../../../hooks/useAuth'
 import AppButton from '../../../../components/AppButton'
 import ArrowDown from "../../../../assets/svg/down-arrow.svg"
+import { useContext } from 'react'
+import { postContext } from '../../../../context/postContext'
 
 
 
@@ -35,7 +37,7 @@ import ArrowDown from "../../../../assets/svg/down-arrow.svg"
 export default function NewPostModal({ fullName, getUserDetails, userInformation, isOpen, onClose }) {
 
     const [isDisabled, setIsDisabled] = useState(true)
-
+    const { AddNewPost } = useContext(postContext)
     const { updateUserInformation } = useAuth()
 
     const options = [
@@ -47,6 +49,7 @@ export default function NewPostModal({ fullName, getUserDetails, userInformation
 
     const handleSubmit = async (values) => {
         await updateUserInformation(values)
+        AddNewPost(values)
         console.log(values)
         await getUserDetails()
         onClose()

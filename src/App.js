@@ -6,24 +6,19 @@ import routes from "./config/routes";
 import { useContext } from "react";
 import UserProvider, { userContext } from "./context/userContext";
 import Welcome from "./pages/landingpage/Welcome";
+import PostProvider from "./context/postContext";
 
 function App() {
   const { accessAccount, loading, userInformation } = useContext(userContext);
 
-  console.log(accessAccount, "accessAccount", loading, "loading", "app");
-  console.log(userInformation, "user");
+  // console.log(accessAccount, "accessAccount", loading, "loading", "app");
+  // console.log(userInformation, "user");
   return (
     <ChakraProvider theme={theme}>
       <Flex flexDir="column">
         <Routes>
           <>
             {!loading && accessAccount ? (
-              // userInformation.city === "" ? (
-              //   <>
-              //     <Route path="/" element=<Welcome /> />
-              //     {/* <Route path="*" element={<Navigate to="/welcome" />} /> */}
-              //   </>
-              // ) :
               <>
                 {routes
                   .filter((r) => r.protected)
